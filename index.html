@@ -747,6 +747,120 @@
             transform: translateY(0);
             opacity: 1;
         }
+
+        /* ==========================================================================
+           MOBILE & TABLET RESPONSIVE ADAPTATION (@media max-width: 1023px)
+           ========================================================================== */
+        @media (max-width: 1023px) {
+            /* Hide Desktop Radial Guide Rays on Mobile */
+            .radial-orbit-wrapper svg {
+                display: none !important;
+            }
+
+            .radial-orbit-wrapper {
+                height: auto !important;
+                min-height: auto !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: flex-start !important;
+                padding-top: 0.5rem;
+                padding-bottom: 2rem;
+                gap: 1.25rem;
+            }
+
+            .radial-center-logo {
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                transform: none !important;
+                margin-bottom: 0.75rem !important;
+                z-index: 10 !important;
+            }
+
+            .logo-card-circle {
+                width: 170px !important;
+                height: 170px !important;
+            }
+
+            .logo-card-image {
+                width: 85px !important;
+                height: 85px !important;
+            }
+
+            /* Convert Orbit Groups to Clean Touch Grid on Mobile */
+            #orbit-main-group,
+            #orbit-about-group,
+            #orbit-clients-group,
+            #orbit-vacancies-group {
+                position: relative !important;
+                inset: auto !important;
+                width: 100% !important;
+                max-width: 480px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 0.85rem !important;
+                pointer-events: auto !important;
+                margin: 0 auto !important;
+            }
+
+            .r-node {
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                transform: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+            }
+
+            .r-node-1, .r-node-2, .r-node-3, .r-node-4, .r-node-5, .r-node-6 {
+                top: auto !important;
+                left: auto !important;
+                transform: none !important;
+            }
+        }
+
+        /* MOBILE PHONE ULTRA-COMPACT ADJUSTMENTS (max-width: 640px) */
+        @media (max-width: 640px) {
+            #hero-header {
+                min-height: auto !important;
+                padding-top: 0.25rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+
+            #hero-main-title {
+                font-size: 1.25rem !important;
+                line-height: 1.35 !important;
+            }
+
+            .toast-notification {
+                left: 1rem !important;
+                right: 1rem !important;
+                bottom: 1rem !important;
+                width: calc(100% - 2rem) !important;
+            }
+
+            /* Sleek Touch-Friendly Modals on Mobile */
+            #about-modal-overlay > div {
+                width: 95vw !important;
+                padding: 1.25rem 1rem !important;
+                border-radius: 1.5rem !important;
+                max-height: 88vh !important;
+            }
+
+            /* Mobile Footer Gap & Spacing */
+            footer > div {
+                flex-direction: column !important;
+                gap: 0.75rem !important;
+            }
+
+            footer .flex {
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+                gap: 0.75rem 1rem !important;
+            }
+        }
     </style>
 </head>
 
@@ -771,7 +885,7 @@
                         onerror="this.onerror=null; this.src='almas_user_logo_transparent.png'">
                 </div>
                 <div class="flex flex-col">
-                    <span class="text-sm sm:text-base font-black tracking-widest text-white font-heading leading-none">АЛМАС</span>
+                    <span class="text-sm sm:text-base font-normal tracking-widest text-white font-heading leading-none">АЛМАС</span>
                     <span data-i18n="header_sub"
                         class="text-[9px] sm:text-[10px] uppercase tracking-widest text-primary font-bold hidden sm:inline-block font-heading mt-0.5">Системный
                         интегратор</span>
@@ -830,7 +944,7 @@
                         КП</span></span>
                 <span class="material-symbols-outlined text-sm text-slate-400">chevron_right</span>
             </a>
-            <a href="#about" onclick="toggleMobileDrawer(); openTab('about')"
+            <a href="javascript:void(0)" onclick="toggleMobileDrawer(); openAboutSection('core_essence')"
                 class="glass-panel p-4.5 rounded-2xl flex items-center justify-between text-white font-semibold">
                 <span class="flex items-center gap-3"><span
                         class="material-symbols-outlined text-primary">history_edu</span> <span data-i18n="nav_about">О
@@ -881,7 +995,7 @@
                 id="hero-header">
                 <div class="relative inline-block text-center max-w-4xl px-3 sm:px-4">
                     <h1 id="hero-main-title" data-i18n="hero_tagline"
-                        class="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight font-heading drop-shadow-[0_0_25px_rgba(56,189,248,0.25)] transition-opacity duration-300">
+                        class="text-2xl sm:text-4xl lg:text-5xl font-normal text-white tracking-tight leading-tight font-heading drop-shadow-[0_0_25px_rgba(56,189,248,0.25)] transition-opacity duration-300">
                         От бизнес-идеи до готового объекта под ключ<span class="typing-cursor text-sky-400 font-mono inline-block animate-pulse ml-1">▌</span>
                     </h1>
                 </div>
@@ -916,8 +1030,8 @@
                                 class="logo-card-image object-contain logo-energy-aura select-none p-1 drop-shadow-[0_0_20px_rgba(56,189,248,0.4)] group-hover:scale-110 transition-transform relative z-10"
                                 onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><polygon points=\'50,10 90,45 50,90 10,45\' fill=\'%2338bdf8\' stroke=\'%23a7c8ff\' stroke-width=\'4\'/><text x=\'50\' y=\'55\' text-anchor=\'middle\' fill=\'white\' font-size=\'14\' font-weight=\'bold\'>АЛМАС</text></svg>'">
 
-                            <span class="text-base sm:text-lg lg:text-xl tracking-widest text-sky-300 font-heading mt-2 uppercase transition-all duration-300 ease-out drop-shadow-[0_0_10px_rgba(56,189,248,0.3)] relative z-10 whitespace-nowrap" id="center-logo-title">ООО АЛМАС</span>
-                            <span data-i18n="center_logo_partner" class="text-sm sm:text-base font-black text-sky-300 uppercase tracking-widest mt-1 relative z-10 whitespace-nowrap">Ваш партнер</span>
+                            <span class="text-base sm:text-lg lg:text-xl tracking-widest text-sky-300 font-heading font-normal mt-2 uppercase transition-all duration-300 ease-out drop-shadow-[0_0_10px_rgba(56,189,248,0.3)] relative z-10 whitespace-nowrap" id="center-logo-title">ООО АЛМАС</span>
+                            <span data-i18n="center_logo_partner" class="text-sm sm:text-base font-normal text-sky-300 uppercase tracking-widest mt-1 relative z-10 whitespace-nowrap">Ваш партнер</span>
 
                             <!-- Entrance Launch Button (Transparent Minimalist Background) -->
                             <div id="portal-launch-btn-wrapper" class="mt-3.5 relative z-10">
@@ -2664,7 +2778,7 @@
                 © 2026 ООО АЛМАС. Видим, идем, создаем.
             </div>
             <div class="flex items-center gap-6">
-                <a href="#about" onclick="openTab('about')" class="hover:text-primary transition-colors"
+                <a href="javascript:void(0)" onclick="openAboutSection('core_essence')" class="hover:text-primary transition-colors"
                     data-i18n="nav_about">О компании</a>
                 <a href="javascript:void(0)" onclick="openLegalDocument('terms')"
                     class="hover:text-primary transition-colors" data-i18n="link_terms">Пользовательское соглашение</a>
@@ -3300,6 +3414,8 @@
 
             if (cleanId === 'about') {
                 updateHeroTagline(true);
+                openAboutSection('core_essence');
+                return;
             } else if (cleanId === 'hub') {
                 const aboutGroup = document.getElementById('orbit-about-group');
                 const isAboutVisible = aboutGroup && aboutGroup.style.display !== 'none' && aboutGroup.style.opacity !== '0';
@@ -3849,68 +3965,77 @@
             const modalContent = document.getElementById('about-modal-content');
             if (!modalOverlay || !modalContent) return;
 
-            let title = '';
             let bodyText = '';
 
             if (docType === 'terms') {
-                title = typeof currentLang !== 'undefined' && currentLang === 'en' ? 'User Agreement' : 'Пользовательское Соглашение ООО АЛМАС';
                 bodyText = `
-                    <div class="flex items-center gap-3 border-b border-white/10 pb-4 mb-4">
-                        <span class="material-symbols-outlined text-sky-400 text-3xl">description</span>
-                        <div>
-                            <h3 class="text-xl font-bold text-white font-heading">${title}</h3>
-                            <p class="text-xs text-slate-400">Регламент использования официального портала ALMAS</p>
-                        </div>
+                    <div class="text-center mb-6 border-b border-white/10 pb-5">
+                        <span class="text-xs uppercase font-bold tracking-widest text-sky-400 font-heading">ООО АЛМАС • Юридический регламент</span>
+                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white font-heading text-center mt-1">Пользовательское Соглашение ALMAS</h2>
+                        <p class="text-xs sm:text-sm text-sky-200 text-center font-medium max-w-2xl mx-auto mt-2">Правила использования веб-портала, подачи заявок на КП и условия EPCM-сопровождения</p>
                     </div>
-                    <div class="space-y-3.5 text-xs sm:text-sm text-slate-300 leading-relaxed font-semibold">
-                        <p>Настоящее Пользовательское Соглашение определяет условия использования официального веб-портала ООО АЛМАС и регулирует отношения между ООО АЛМАС и любым пользователем портала.</p>
-                        <h4 class="font-bold text-sky-400 text-sm font-heading mt-3">1. Интеллектуальная собственность</h4>
-                        <p>Все материалы, архитектурные проекты, расчетные калькуляторы и графические артефакты являются интеллектуальной собственностью ООО АЛМАС. Использование материалов разрешено исключительно в целях ознакомления и направления запросов на КП.</p>
-                        <h4 class="font-bold text-sky-400 text-sm font-heading mt-3">2. Подача заявок и коммерческих предложений</h4>
-                        <p>Заявки, направленные через формы сайта, проходят прямую валидацию и поступают в инженерный отдел для расчета сметы в течение 1 рабочего дня.</p>
+
+                    <div class="space-y-4 text-xs sm:text-sm text-slate-300 leading-relaxed text-left max-w-3xl mx-auto">
+                        <div class="glass-panel p-5 rounded-2xl border border-white/10">
+                            <h4 class="font-bold text-sky-300 text-sm font-heading mb-1.5">1. Общие положения & Предмет соглашения</h4>
+                            <p>Настоящее Соглашение регулирует отношения между ООО «АЛМАС» (ОГРН 1227700000000) и любым физическим или юридическим лицом, использующим сервисы веб-портала almas.ru. Использование портала означает безусловное принятие данных условий.</p>
+                        </div>
+                        <div class="glass-panel p-5 rounded-2xl border border-white/10">
+                            <h4 class="font-bold text-sky-300 text-sm font-heading mb-1.5">2. Права на интеллектуальную собственность</h4>
+                            <p>Все инженерные спецификации, программные скрипты, графические элементы, логотипы и 3D-модели является интеллектуальной собственностью ООО «АЛМАС». Копирование без письменного разрешения запрещено.</p>
+                        </div>
+                        <div class="glass-panel p-5 rounded-2xl border border-white/10">
+                            <h4 class="font-bold text-sky-300 text-sm font-heading mb-1.5">3. Формирование КП и расчетов</h4>
+                            <p>Запросы КП и онлайн-расчеты стоимости имеют предварительный характер. Финальная твердая смета фиксируется в официальном договоре EPCM после предпроектного аудита главным инженером ALMAS.</p>
+                        </div>
                     </div>
                 `;
             } else if (docType === 'nda') {
-                title = typeof currentLang !== 'undefined' && currentLang === 'en' ? 'Privacy Policy & NDA' : 'Политика Конфиденциальности & NDA';
                 bodyText = `
-                    <div class="flex items-center gap-3 border-b border-white/10 pb-4 mb-4">
-                        <span class="material-symbols-outlined text-emerald-400 text-3xl">lock</span>
-                        <div>
-                            <h3 class="text-xl font-bold text-white font-heading">${title}</h3>
-                            <p class="text-xs text-slate-400">Гарантии защиты коммерческой тайны и конфиденциальности</p>
-                        </div>
+                    <div class="text-center mb-6 border-b border-white/10 pb-5">
+                        <span class="text-xs uppercase font-bold tracking-widest text-sky-400 font-heading">ООО АЛМАС • Режим конфиденциальности</span>
+                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white font-heading text-center mt-1">Политика Конфиденциальности & NDA</h2>
+                        <p class="text-xs sm:text-sm text-sky-200 text-center font-medium max-w-2xl mx-auto mt-2">100% защита коммерческой тайны, чертежей и проектной документации Заказчика</p>
                     </div>
-                    <div class="space-y-3.5 text-xs sm:text-sm text-slate-300 leading-relaxed font-semibold">
-                        <p>ООО АЛМАС гарантирует строжайший режим защиты коммерческой тайны и конфиденциальной информации в отношении любых технических заданий (ТЗ), чертежей, смет и проектной документации Заказчика.</p>
-                        <h4 class="font-bold text-emerald-400 text-sm font-heading mt-3">1. Соглашение о неразглашении (NDA)</h4>
-                        <p>Вся передаваемая информация охраняется Законом РФ О коммерческой тайне и не подлежит передаче третьим лицам без письменного согласия Заказчика.</p>
-                        <h4 class="font-bold text-emerald-400 text-sm font-heading mt-3">2. Безопасность данных</h4>
-                        <p>Данные защищены банковским шифрованием и строгими протоколами безопасности ИТ-инфраструктуры ALMAS.</p>
+
+                    <div class="space-y-4 text-xs sm:text-sm text-slate-300 leading-relaxed text-left max-w-3xl mx-auto">
+                        <div class="glass-panel p-5 rounded-2xl border border-sky-400/30 bg-sky-500/10 shadow-[0_0_20px_rgba(56,189,248,0.15)]">
+                            <h4 class="font-bold text-sky-300 text-sm font-heading mb-1.5">1. Гарантии неразглашения (NDA)</h4>
+                            <p>ООО «АЛМАС» обязуется сохранять в строжайшей тайне любые полученные от Заказчика ТЗ, планировки объектов, параметры серверных ЦОД и финансовые показатели. Данные не передаются третьим лицам без письменного согласия.</p>
+                        </div>
+                        <div class="glass-panel p-5 rounded-2xl border border-sky-400/30 bg-sky-500/10 shadow-[0_0_20px_rgba(56,189,248,0.15)]">
+                            <h4 class="font-bold text-sky-300 text-sm font-heading mb-1.5">2. Стандарты безопасности хранения</h4>
+                            <p>Все прикрепляемые документы и файлы смет хранятся в изолированном корпоративном контуре ALMAS с использованием шифрования AES-256 и строгим ограничением прав доступа только назначенной бригаде инженеров.</p>
+                        </div>
                     </div>
                 `;
             } else if (docType === 'fz152') {
-                title = typeof currentLang !== 'undefined' && currentLang === 'en' ? 'Personal Data Processing (152-FZ)' : 'Согласие на обработку персональных данных (152-ФЗ)';
                 bodyText = `
-                    <div class="flex items-center gap-3 border-b border-white/10 pb-4 mb-4">
-                        <span class="material-symbols-outlined text-indigo-400 text-3xl">verified_user</span>
-                        <div>
-                            <h3 class="text-xl font-bold text-white font-heading">${title}</h3>
-                            <p class="text-xs text-slate-400">Соответствие требованиям 152-ФЗ РФ</p>
-                        </div>
+                    <div class="text-center mb-6 border-b border-white/10 pb-5">
+                        <span class="text-xs uppercase font-bold tracking-widest text-indigo-400 font-heading">ООО АЛМАС • Законодательство РФ</span>
+                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white font-heading text-center mt-1">Согласие на обработку данных (152-ФЗ)</h2>
+                        <p class="text-xs sm:text-sm text-sky-200 text-center font-medium max-w-2xl mx-auto mt-2">Полное соответствие требованиям Федерального закона № 152-ФЗ РФ «О персональных данных»</p>
                     </div>
-                    <div class="space-y-3.5 text-xs sm:text-sm text-slate-300 leading-relaxed font-semibold">
-                        <p>Заполняя формы обратной связи, заявки на КП или резюме на сайте ООО АЛМАС, Вы даете полное согласие на обработку персональных данных Оператору — <strong>ООО АЛМАС</strong> в соответствии с Федеральным законом № 152-ФЗ О персональных данных.</p>
-                        <h4 class="font-bold text-indigo-400 text-sm font-heading mt-3">1. Состав обрабатываемых данных</h4>
-                        <p>ФИО, контактный телефон, E-mail, наименование компании, текст обращения и прикрепленные файлы ТЗ/резюме.</p>
-                        <h4 class="font-bold text-indigo-400 text-sm font-heading mt-3">2. Цели обработки</h4>
-                        <p>Подготовка смет, обратная связь, техническое сопровождение проектов и заключение договоров поставки.</p>
+
+                    <div class="space-y-4 text-xs sm:text-sm text-slate-300 leading-relaxed text-left max-w-3xl mx-auto">
+                        <div class="glass-panel p-5 rounded-2xl border border-white/10">
+                            <h4 class="font-bold text-indigo-300 text-sm font-heading mb-1.5">1. Согласие Оператору</h4>
+                            <p>Отправляя форму на сайте ООО «АЛМАС», Вы даете согласие на обработку персональных данных (ФИО, телефон, E-mail, название организации) для связи и подготовки коммерческого предложения.</p>
+                        </div>
+                        <div class="glass-panel p-5 rounded-2xl border border-white/10">
+                            <h4 class="font-bold text-indigo-300 text-sm font-heading mb-1.5">2. Отзыв согласия & Сроки хранения</h4>
+                            <p>Персональные данные хранятся до достижения целей обработки. Вы можете в любой момент отозвать согласие, направив запрос на info@almas.ru.</p>
+                        </div>
                     </div>
                 `;
             }
 
             modalContent.innerHTML = bodyText;
+            modalOverlay.style.display = 'flex';
             modalOverlay.classList.remove('pointer-events-none', 'opacity-0');
-            modalOverlay.classList.add('opacity-100');
+            modalOverlay.classList.add('opacity-100', 'pointer-events-auto');
+
+            setTimeout(animateModalTypingText, 30);
         }
 
 
