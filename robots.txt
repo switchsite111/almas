@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+Disallow: /*?*
+Disallow: /scratch/
+Disallow: /admin/
+Disallow: /*.pdf$
+
+User-agent: Yandex
+Allow: /
+Disallow: /*?*
+Disallow: /scratch/
+Disallow: /admin/
+Clean-param: utm_source&utm_medium&utm_campaign&gclid&yclid
+
+Host: https://almas-sys.ru
+Sitemap: https://almas-sys.ru/sitemap.xml
