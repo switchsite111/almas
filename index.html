@@ -2943,9 +2943,9 @@
                 lbl_file: "Прикрепить файл (ТЗ / Проект)",
                 file_drag: "Перетащите сюда файлы или нажмите для выбора",
                 consent_text: "Принимаю условия",
-                link_terms: "Пользовательского соглашения",
-                link_nda: "Политики Конфиденциальности & NDA",
-                link_fz152: "обработку персональных данных (152-ФЗ)",
+                link_terms: "Пользовательское соглашение",
+                link_nda: "Политика Конфиденциальности & NDA",
+                link_fz152: "152-ФЗ (Персональные данные)",
                 btn_send_kp: "Отправить предложение",
                 vacancies_title: "Вакансии ООО АЛМАС",
                 vacancies_subtitle: "Присоединяйтесь к нашей команде профессионалов",
@@ -3865,21 +3865,30 @@
             showToast('Локальные данные сессии очищены');
             playGlassChime(750, 0.08);
             renderCabinetView();
-        }     /* HELPER FOR ORBIT SWITCHING */
+        }
+
+        /* HELPER FOR ORBIT SWITCHING */
         function switchOrbitGroup(hideGroup, showGroup) {
-            if (!hideGroup || !showGroup) return;
-            hideGroup.style.opacity = '0';
-            hideGroup.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                hideGroup.style.display = 'none';
-                showGroup.style.display = 'block';
+            if (!showGroup) return;
+            const groups = [
+                document.getElementById('orbit-main-group'),
+                document.getElementById('orbit-about-group'),
+                document.getElementById('orbit-clients-group'),
+                document.getElementById('orbit-vacancies-group')
+            ];
+            groups.forEach(g => {
+                if (g && g !== showGroup) {
+                    g.style.opacity = '0';
+                    g.style.display = 'none';
+                }
+            });
+            showGroup.style.display = 'block';
+            requestAnimationFrame(() => {
                 requestAnimationFrame(() => {
-                    requestAnimationFrame(() => {
-                        showGroup.style.opacity = '1';
-                        showGroup.style.transform = 'scale(1)';
-                    });
+                    showGroup.style.opacity = '1';
+                    showGroup.style.transform = 'scale(1)';
                 });
-            }, 250);
+            });
         }
 
         /* ABOUT US RADIAL ORBIT SWITCHER */
