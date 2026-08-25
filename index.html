@@ -764,18 +764,24 @@
                 flex-direction: column !important;
                 align-items: center !important;
                 justify-content: flex-start !important;
-                padding-top: 0.5rem;
-                padding-bottom: 2rem;
-                gap: 1.25rem;
+                padding-top: 0.5rem !important;
+                padding-bottom: 2rem !important;
+                gap: 1.25rem !important;
+                position: relative !important;
             }
 
             .radial-center-logo {
                 position: relative !important;
-                top: auto !important;
-                left: auto !important;
+                top: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                bottom: 0 !important;
                 transform: none !important;
-                margin-bottom: 0.75rem !important;
+                margin: 0 0 1.25rem 0 !important;
                 z-index: 10 !important;
+                display: flex !important;
+                justify-content: center !important;
+                width: 100% !important;
             }
 
             .logo-card-circle {
@@ -795,6 +801,11 @@
             #orbit-vacancies-group {
                 position: relative !important;
                 inset: auto !important;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                transform: none !important;
                 width: 100% !important;
                 max-width: 480px !important;
                 display: flex !important;
@@ -804,20 +815,23 @@
                 margin: 0 auto !important;
             }
 
-            .r-node {
+            .radial-orbit-wrapper .r-node,
+            .radial-orbit-wrapper .r-node-1,
+            .radial-orbit-wrapper .r-node-2,
+            .radial-orbit-wrapper .r-node-3,
+            .radial-orbit-wrapper .r-node-4,
+            .radial-orbit-wrapper .r-node-5,
+            .radial-orbit-wrapper .r-node-6 {
                 position: relative !important;
                 top: auto !important;
                 left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
                 transform: none !important;
                 width: 100% !important;
                 max-width: 100% !important;
                 margin: 0 !important;
-            }
-
-            .r-node-1, .r-node-2, .r-node-3, .r-node-4, .r-node-5, .r-node-6 {
-                top: auto !important;
-                left: auto !important;
-                transform: none !important;
+                z-index: 20 !important;
             }
         }
 
