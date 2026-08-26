@@ -151,7 +151,7 @@ app.post('/api/kp', sensitiveLimiter, (req, res) => {
 
         return res.status(200).json({
             success: true,
-            message: 'Заявка КП успешно принята и передана инженерам ALMAS',
+            message: 'Заявка КП успешно принята и передана инженерам АЛМАС',
             data: validated
         });
     } catch (err) {
@@ -196,7 +196,7 @@ app.get('*', (req, res) => {
 // 8. START EXPRESS SERVER
 app.listen(PORT, () => {
     console.log(`=======================================================`);
-    console.log(`🚀 ООО ALMAS Security Server running on port ${PORT}`);
+    console.log(`🚀 ООО АЛМАС Security Server running on port ${PORT}`);
     console.log(`🛡️ Helmet Headers: Active (HSTS, CSP, X-Frame-Options)`);
     console.log(`⚡ Rate Limiting: 100 req/15min (Global), 5 req/1min (Sensitive)`);
     console.log(`🔒 Zod Validation & Anti-XSS Sanitization: Active`);
