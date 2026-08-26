@@ -839,52 +839,104 @@
         }
 
         /* ==========================================================================
-           MOBILE & TABLET RESPONSIVE ADAPTATION (@media max-width: 1023px)
+           PREMIUM ORGANIC MOBILE & TABLET RESPONSIVE SYSTEM (@media max-width: 1023px)
+           (Completely non-orbital, fluid vertical stack with native mobile ergonomics)
            ========================================================================== */
         @media (max-width: 1023px) {
-            /* Hide Desktop Radial Guide Rays on Mobile */
+            /* 1. Eliminate desktop SVG orbit rings & guide rays */
             .radial-orbit-wrapper svg {
                 display: none !important;
             }
 
-            .radial-orbit-wrapper {
+            /* 2. Public Header Mobile Refinements */
+            header {
+                padding: 0.5rem 0.75rem !important;
+            }
+
+            header .logo-container {
+                gap: 0.5rem !important;
+            }
+
+            /* 3. Main Container Spacing */
+            main {
+                padding-top: 4.25rem !important;
+                padding-left: 0.75rem !important;
+                padding-right: 0.75rem !important;
+                padding-bottom: 2rem !important;
+                min-height: auto !important;
+            }
+
+            /* 4. Tagline Header */
+            #hero-header {
                 height: auto !important;
                 min-height: auto !important;
+                margin-bottom: 0.85rem !important;
+                padding-top: 0.25rem !important;
+            }
+
+            #hero-main-title {
+                font-size: 1.15rem !important;
+                line-height: 1.35 !important;
+                padding: 0 0.25rem !important;
+            }
+
+            /* 5. Mobile Dashboard Wrapper */
+            .radial-orbit-wrapper {
+                position: relative !important;
+                width: 100% !important;
+                max-width: 500px !important;
+                height: auto !important;
+                min-height: auto !important;
+                margin: 0 auto !important;
+                padding: 0 0 1rem 0 !important;
                 display: flex !important;
                 flex-direction: column !important;
                 align-items: center !important;
-                justify-content: flex-start !important;
-                padding-top: 0.5rem !important;
-                padding-bottom: 2rem !important;
-                gap: 1.25rem !important;
-                position: relative !important;
+                gap: 0.85rem !important;
             }
 
+            /* 6. Brand Core Badge on Mobile */
             .radial-center-logo {
                 position: relative !important;
-                top: 0 !important;
-                left: 0 !important;
-                right: 0 !important;
-                bottom: 0 !important;
+                inset: auto !important;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
                 transform: none !important;
-                margin: 0 0 1.25rem 0 !important;
-                z-index: 10 !important;
+                margin: 0 0 0.5rem 0 !important;
+                width: 100% !important;
                 display: flex !important;
                 justify-content: center !important;
-                width: 100% !important;
+                z-index: 10 !important;
             }
 
             .logo-card-circle {
-                width: 170px !important;
-                height: 170px !important;
+                width: 100% !important;
+                max-width: 300px !important;
+                height: auto !important;
+                padding: 0.75rem 1.25rem !important;
+                border-radius: 1.25rem !important;
+                background: rgba(56, 189, 248, 0.08) !important;
+                border: 1px solid rgba(56, 189, 248, 0.25) !important;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25) !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
             }
 
             .logo-card-image {
-                width: 85px !important;
-                height: 85px !important;
+                width: 52px !important;
+                height: 52px !important;
+                margin-bottom: 0.2rem !important;
             }
 
-            /* Convert Orbit Groups to Clean Touch Grid on Mobile */
+            #center-logo-title {
+                font-size: 0.95rem !important;
+                margin-top: 0.15rem !important;
+            }
+
+            /* 7. Groups become structured vertical touch card lists */
             #orbit-main-group,
             #orbit-about-group,
             #orbit-clients-group,
@@ -897,21 +949,15 @@
                 bottom: auto !important;
                 transform: none !important;
                 width: 100% !important;
-                max-width: 480px !important;
                 display: flex !important;
                 flex-direction: column !important;
-                gap: 0.85rem !important;
+                gap: 0.75rem !important;
+                margin: 0 !important;
                 pointer-events: auto !important;
-                margin: 0 auto !important;
             }
 
-            .radial-orbit-wrapper .r-node,
-            .radial-orbit-wrapper .r-node-1,
-            .radial-orbit-wrapper .r-node-2,
-            .radial-orbit-wrapper .r-node-3,
-            .radial-orbit-wrapper .r-node-4,
-            .radial-orbit-wrapper .r-node-5,
-            .radial-orbit-wrapper .r-node-6 {
+            /* 8. Node wrappers reset to block flex items */
+            .radial-orbit-wrapper .r-node {
                 position: relative !important;
                 top: auto !important;
                 left: auto !important;
@@ -923,21 +969,86 @@
                 margin: 0 !important;
                 z-index: 20 !important;
             }
-        }
 
-        /* MOBILE PHONE ULTRA-COMPACT ADJUSTMENTS (max-width: 640px) */
-        @media (max-width: 640px) {
-            #hero-header {
-                min-height: auto !important;
-                padding-top: 0.25rem !important;
-                margin-bottom: 0.5rem !important;
+            /* 9. Card Visual Styling on Mobile */
+            .radial-orbit-wrapper .r-node .glass-panel {
+                width: 100% !important;
+                min-height: 72px !important;
+                padding: 1rem 1.25rem !important;
+                border-radius: 1.25rem !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                text-align: center !important;
+                cursor: pointer !important;
+                border-width: 1.5px !important;
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
+                transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease, background 0.15s ease !important;
             }
 
-            #hero-main-title {
-                font-size: 1.25rem !important;
-                line-height: 1.35 !important;
+            .radial-orbit-wrapper .r-node .glass-panel:active {
+                transform: scale(0.98) !important;
             }
 
+            .radial-orbit-wrapper .r-node .glass-panel h3 {
+                font-size: 0.95rem !important;
+                letter-spacing: 0.05em !important;
+                line-height: 1.25 !important;
+            }
+
+            .radial-orbit-wrapper .r-node .glass-panel p {
+                font-size: 0.75rem !important;
+                line-height: 1.3 !important;
+                margin-top: 0.2rem !important;
+            }
+
+            /* 10. Navigation Back Button (r-node-4) on Mobile */
+            .r-node-4 .glass-panel {
+                background: rgba(56, 189, 248, 0.14) !important;
+                border: 1.5px solid rgba(56, 189, 248, 0.5) !important;
+                box-shadow: 0 4px 18px rgba(56, 189, 248, 0.2) !important;
+                margin-top: 0.35rem !important;
+            }
+
+            /* 11. Light Theme Mobile Overrides */
+            body.light-theme .logo-card-circle {
+                background: #ffffff !important;
+                border-color: rgba(11, 32, 56, 0.16) !important;
+                box-shadow: 0 6px 20px rgba(11, 32, 56, 0.08) !important;
+            }
+
+            body.light-theme .radial-orbit-wrapper .r-node .glass-panel {
+                background: #ffffff !important;
+                border-color: rgba(11, 32, 56, 0.15) !important;
+                box-shadow: 0 4px 16px rgba(11, 32, 56, 0.06) !important;
+            }
+
+            body.light-theme .radial-orbit-wrapper .r-node .glass-panel:active {
+                background: #f0f7ff !important;
+                border-color: #0284c7 !important;
+            }
+
+            body.light-theme .r-node-4 .glass-panel {
+                background: #e0f2fe !important;
+                border-color: #0284c7 !important;
+            }
+
+            /* 12. Modals on Mobile */
+            #about-modal-overlay > div {
+                width: 95vw !important;
+                max-width: 540px !important;
+                max-height: 88vh !important;
+                padding: 1.25rem 1rem !important;
+                border-radius: 1.5rem !important;
+            }
+
+            /* Input sizing on iOS to prevent auto-zoom */
+            input, select, textarea {
+                font-size: 16px !important;
+            }
+
+            /* 13. Toast Notification */
             .toast-notification {
                 left: 1rem !important;
                 right: 1rem !important;
@@ -945,15 +1056,7 @@
                 width: calc(100% - 2rem) !important;
             }
 
-            /* Sleek Touch-Friendly Modals on Mobile */
-            #about-modal-overlay > div {
-                width: 95vw !important;
-                padding: 1.25rem 1rem !important;
-                border-radius: 1.5rem !important;
-                max-height: 88vh !important;
-            }
-
-            /* Mobile Footer Gap & Spacing */
+            /* 14. Footer Mobile Flow */
             footer > div {
                 flex-direction: column !important;
                 gap: 0.75rem !important;
@@ -962,7 +1065,7 @@
             footer .flex {
                 flex-wrap: wrap !important;
                 justify-content: center !important;
-                gap: 0.75rem 1rem !important;
+                gap: 0.5rem 1rem !important;
             }
         }
     </style>
@@ -1297,159 +1400,9 @@
                                 <p data-i18n="card_main_menu_desc" class="text-xs sm:text-sm font-semibold text-slate-200 mt-1 leading-snug text-center">
                                     Вернуться в обзор
                                 </p>
-                            </div>
-                        </div>
                     </div>
-
-                    <!-- Mobile & Tablet Layout Main Grid -->
-                    <div id="mobile-main-grid"
-                        class="w-full max-w-md sm:max-w-xl md:max-w-2xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:hidden px-2 mt-6 sm:mt-10">
-                        <a href="#kp" onclick="openTab('kp')"
-                            class="glass-panel p-3.5 sm:p-4 rounded-2xl flex items-center gap-3 text-left hover:border-primary/60 transition-all">
-                            <span class="material-symbols-outlined text-primary text-2xl">handshake</span>
-                            <div>
-                                <div data-i18n="card_client" class="font-bold text-white text-xs sm:text-sm font-heading">Для
-                                    заказчиков</div>
-                                <div data-i18n="card_client_desc" class="text-[10px] sm:text-xs text-slate-400">Инструменты Заказчика</div>
-                            </div>
-                        </a>
-
-                        <div onclick="toggleServicesCatalog(true)"
-                            class="glass-panel p-3.5 sm:p-4 rounded-2xl flex items-center gap-3 text-left cursor-pointer border-sky-400/40 bg-sky-400/10 hover:bg-sky-400/20 transition-all sm:col-span-2">
-                            <span class="material-symbols-outlined text-sky-300 text-2xl">auto_awesome</span>
-                            <div>
-                                <div data-i18n="mobile_offer_title" class="font-bold text-sky-200 text-xs sm:text-sm font-heading">Ваши желания — наша забота.
-                                </div>
-                                <div data-i18n="mobile_offer_desc" class="text-[10px] sm:text-xs text-slate-300">Выбирайте любые задачи, мы поможем их решить
-                                </div>
-                            </div>
-                        </div>
-
-                        <a href="#vacancies" onclick="openTab('vacancies')"
-                            class="glass-panel p-3.5 sm:p-4 rounded-2xl flex items-center gap-3 text-left hover:border-primary/60 transition-all">
-                            <span class="material-symbols-outlined text-primary text-2xl">work</span>
-                            <div>
-                                <div data-i18n="card_vacancies" class="font-bold text-white text-xs sm:text-sm font-heading">
-                                    Вакансии</div>
-                                <div data-i18n="card_vacancies_desc" class="text-[10px] sm:text-xs text-slate-400">Работа в ALMAS
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="#projects" onclick="openTab('projects')"
-                            class="glass-panel p-3.5 sm:p-4 rounded-2xl flex items-center gap-3 text-left hover:border-primary/60 transition-all">
-                            <span class="material-symbols-outlined text-primary text-2xl">domain</span>
-                            <div>
-                                <div data-i18n="card_projects" class="font-bold text-white text-xs sm:text-sm font-heading">Наши
-                                    проекты</div>
-                                <div data-i18n="card_projects_desc" class="text-[10px] sm:text-xs text-slate-400">200+ объектов
-                                </div>
-                            </div>
-                        </a>
-
-                        <div onclick="openTab('kp')"
-                            class="glass-panel p-3.5 sm:p-4 rounded-2xl flex items-center gap-3 text-left cursor-pointer border-indigo-400/40 bg-indigo-500/10 hover:bg-indigo-500/20 transition-all sm:col-span-2">
-                            <span class="material-symbols-outlined text-indigo-300 text-2xl">lightbulb</span>
-                            <div>
-                                <div data-i18n="mobile_unknown_title" class="font-bold text-indigo-200 text-xs sm:text-sm font-heading">Не знаете чего бы вам
-                                    хотелось? Это так же наша забота!</div>
-                                <div data-i18n="mobile_unknown_desc" class="text-[10px] sm:text-xs text-slate-300">Алмас поможет разобраться в ваших желания,
-                                    просто оставьте заявку!</div>
-                            </div>
-                        </div>
-
-                        <a href="#about" onclick="openTab('about')"
-                            class="glass-panel p-3.5 sm:p-4 rounded-2xl flex items-center gap-3 text-left hover:border-primary/60 transition-all sm:col-span-2">
-                            <span class="material-symbols-outlined text-sky-400 text-2xl">verified_user</span>
-                            <div>
-                                <div data-i18n="nav_about" class="font-bold text-white text-xs sm:text-sm font-heading">О нас</div>
-                                <div data-i18n="about_val_badge" class="text-[10px] sm:text-xs text-slate-400">Единый центр EPCM</div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Mobile & Tablet Layout Services Grid -->
-                    <div id="mobile-services-grid"
-                        class="w-full max-w-md sm:max-w-xl md:max-w-2xl mx-auto hidden flex-col gap-3 lg:hidden max-h-[65vh] overflow-y-auto pr-1 overscroll-contain">
-                        <button onclick="toggleServicesCatalog(false)"
-                            class="glass-button p-2.5 rounded-xl text-xs font-bold text-sky-300 flex items-center justify-center gap-2 mb-1 border-sky-400/40 hover:bg-sky-400/20">
-                            <span class="material-symbols-outlined text-sm">arrow_back</span> ← Вернуться
-                        </button>
-
-                        <div class="grid grid-cols-2 gap-2.5">
-                            <div onclick="selectServiceDirection('ИТ-Инфраструктура & ЦОД')"
-                                class="glass-panel p-3 rounded-xl text-left cursor-pointer border-sky-400/20 hover:border-sky-400 transition-all">
-                                <span class="material-symbols-outlined text-sky-400 text-lg">dns</span>
-                                <div class="font-bold text-white text-[11px] mt-1 font-heading">ИТ-Инфраструктура</div>
-                                <div class="text-[9px] text-slate-400">ЦОД и СХД</div>
-                            </div>
-
-                            <div onclick="selectServiceDirection('Кибербезопасность & Защита Данных')"
-                                class="glass-panel p-3 rounded-xl text-left cursor-pointer border-sky-400/20 hover:border-sky-400 transition-all">
-                                <span class="material-symbols-outlined text-sky-400 text-lg">shield_lock</span>
-                                <div class="font-bold text-white text-[11px] mt-1 font-heading">Кибербезопасность</div>
-                                <div class="text-[9px] text-slate-400">Защита ГОСТ</div>
-                            </div>
-
-                            <div onclick="selectServiceDirection('Сетевые Решения & ВОЛС')"
-                                class="glass-panel p-3 rounded-xl text-left cursor-pointer border-sky-400/20 hover:border-sky-400 transition-all">
-                                <span class="material-symbols-outlined text-sky-400 text-lg">hub</span>
-                                <div class="font-bold text-white text-[11px] mt-1 font-heading">Сетевые Решения</div>
-                                <div class="text-[9px] text-slate-400">СКС и ВОЛС</div>
-                            </div>
-
-                            <div onclick="selectServiceDirection('Облачные Сервисы & ПО')"
-                                class="glass-panel p-3 rounded-xl text-left cursor-pointer border-sky-400/20 hover:border-sky-400 transition-all">
-                                <span class="material-symbols-outlined text-sky-400 text-lg">cloud_sync</span>
-                                <div class="font-bold text-white text-[11px] mt-1 font-heading">Облачные Сервисы</div>
-                                <div class="text-[9px] text-slate-400">Виртуализация</div>
-                            </div>
-
-                            <div onclick="selectServiceDirection('СКУД & Инженерные Системы')"
-                                class="glass-panel p-3 rounded-xl text-left cursor-pointer border-sky-400/20 hover:border-sky-400 transition-all">
-                                <span class="material-symbols-outlined text-sky-400 text-lg">security</span>
-                                <div class="font-bold text-white text-[11px] mt-1 font-heading">СКУД & Инженерия</div>
-                                <div class="text-[9px] text-slate-400">Контроль доступа</div>
-                            </div>
-
-                            <div onclick="selectServiceDirection('Модификация & Строительство')"
-                                class="glass-panel p-3 rounded-xl text-left cursor-pointer border-sky-400/20 hover:border-sky-400 transition-all">
-                                <span class="material-symbols-outlined text-sky-400 text-lg">construction</span>
-                                <div class="font-bold text-white text-[11px] mt-1 font-heading">Строительство</div>
-                                <div class="text-[9px] text-slate-400">Спец объекты</div>
-                            </div>
-
-                            <div onclick="selectServiceDirection('Системная Интеграция')"
-                                class="glass-panel p-3 rounded-xl text-left cursor-pointer border-sky-400/20 hover:border-sky-400 transition-all">
-                                <span
-                                    class="material-symbols-outlined text-sky-400 text-lg">integration_instructions</span>
-                                <div class="font-bold text-white text-[11px] mt-1 font-heading">Интеграция ПО</div>
-                                <div class="text-[9px] text-slate-400">ERP & CRM</div>
-                            </div>
-
-                            <div onclick="selectServiceDirection('ИТ-Аутсорсинг & Сервис 24/7')"
-                                class="glass-panel p-3 rounded-xl text-left cursor-pointer border-sky-400/20 hover:border-sky-400 transition-all">
-                                <span class="material-symbols-outlined text-sky-400 text-lg">support_agent</span>
-                                <div class="font-bold text-white text-[11px] mt-1 font-heading">Сервис & Поддержка</div>
-                                <div class="text-[9px] text-slate-400">Поддержка 24/7</div>
-                            </div>
-
-                            <div onclick="selectServiceDirection('Поставка Оборудования & ПО')"
-                                class="glass-panel p-3 rounded-xl text-left cursor-pointer border-sky-400/20 hover:border-sky-400 transition-all">
-                                <span class="material-symbols-outlined text-sky-400 text-lg">inventory_2</span>
-                                <div class="font-bold text-white text-[11px] mt-1 font-heading">Поставка оборудования
-                                </div>
-                                <div class="text-[9px] text-slate-400">Параллельный импорт</div>
-                            </div>
-
-                            <div onclick="selectServiceDirection('Проектирование & Консалтинг')"
-                                class="glass-panel p-3 rounded-xl text-left cursor-pointer border-sky-400/20 hover:border-sky-400 transition-all">
-                                <span class="material-symbols-outlined text-sky-400 text-lg">design_services</span>
-                                <div class="font-bold text-white text-[11px] mt-1 font-heading">Проектирование</div>
-                                <div class="text-[9px] text-slate-400">ТЗ и Аудит</div>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+            </div>
 
                 </div>
             </div>
