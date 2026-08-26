@@ -839,8 +839,8 @@
         }
 
         /* ==========================================================================
-           PREMIUM ORGANIC MOBILE & TABLET RESPONSIVE SYSTEM (@media max-width: 1023px)
-           (Completely non-orbital, fluid vertical stack with native mobile ergonomics)
+           COMPACT SINGLE-SCREEN MOBILE & TABLET SYSTEM (@media max-width: 1023px)
+           (Fits 100% in viewport height, NO vertical scrolling, smooth 2x2 sub-grids)
            ========================================================================== */
         @media (max-width: 1023px) {
             /* 1. Eliminate desktop SVG orbit rings & guide rays */
@@ -850,33 +850,43 @@
 
             /* 2. Public Header Mobile Refinements */
             header {
-                padding: 0.5rem 0.75rem !important;
+                padding: 0.4rem 0.65rem !important;
             }
 
-            header .logo-container {
-                gap: 0.5rem !important;
-            }
-
-            /* 3. Main Container Spacing */
+            /* 3. Main Container - Clean Single Viewport Spacing */
             main {
-                padding-top: 4.25rem !important;
-                padding-left: 0.75rem !important;
-                padding-right: 0.75rem !important;
-                padding-bottom: 2rem !important;
-                min-height: auto !important;
+                padding-top: 3.5rem !important;
+                padding-left: 0.65rem !important;
+                padding-right: 0.65rem !important;
+                padding-bottom: 0.5rem !important;
+                min-height: calc(100vh - 45px) !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+                align-items: center !important;
             }
 
-            /* 4. Tagline Header */
+            #tab-hub {
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+                align-items: center !important;
+                width: 100% !important;
+                height: 100% !important;
+                flex: 1 1 auto !important;
+            }
+
+            /* 4. Compact Tagline Header */
             #hero-header {
                 height: auto !important;
                 min-height: auto !important;
-                margin-bottom: 0.85rem !important;
-                padding-top: 0.25rem !important;
+                margin-bottom: 0.35rem !important;
+                padding-top: 0 !important;
             }
 
             #hero-main-title {
-                font-size: 1.15rem !important;
-                line-height: 1.35 !important;
+                font-size: 0.95rem !important;
+                line-height: 1.25 !important;
                 padding: 0 0.25rem !important;
             }
 
@@ -884,18 +894,18 @@
             .radial-orbit-wrapper {
                 position: relative !important;
                 width: 100% !important;
-                max-width: 500px !important;
+                max-width: 440px !important;
                 height: auto !important;
                 min-height: auto !important;
                 margin: 0 auto !important;
-                padding: 0 0 1rem 0 !important;
+                padding: 0 !important;
                 display: flex !important;
                 flex-direction: column !important;
                 align-items: center !important;
-                gap: 0.85rem !important;
+                gap: 0.4rem !important;
             }
 
-            /* 6. Brand Core Badge on Mobile */
+            /* 6. Brand Core Badge on Mobile - Horizontal Compact Capsule */
             .radial-center-logo {
                 position: relative !important;
                 inset: auto !important;
@@ -904,7 +914,7 @@
                 right: auto !important;
                 bottom: auto !important;
                 transform: none !important;
-                margin: 0 0 0.5rem 0 !important;
+                margin: 0 0 0.35rem 0 !important;
                 width: 100% !important;
                 display: flex !important;
                 justify-content: center !important;
@@ -912,32 +922,95 @@
             }
 
             .logo-card-circle {
-                width: 100% !important;
-                max-width: 300px !important;
+                width: auto !important;
+                min-width: 190px !important;
+                max-width: 280px !important;
                 height: auto !important;
-                padding: 0.75rem 1.25rem !important;
-                border-radius: 1.25rem !important;
+                padding: 0.35rem 0.85rem !important;
+                border-radius: 0.875rem !important;
                 background: rgba(56, 189, 248, 0.08) !important;
                 border: 1px solid rgba(56, 189, 248, 0.25) !important;
-                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25) !important;
+                box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2) !important;
                 display: flex !important;
-                flex-direction: column !important;
+                flex-direction: row !important;
                 align-items: center !important;
+                gap: 0.5rem !important;
             }
 
             .logo-card-image {
-                width: 52px !important;
-                height: 52px !important;
-                margin-bottom: 0.2rem !important;
+                width: 32px !important;
+                height: 32px !important;
+                margin-bottom: 0 !important;
             }
 
             #center-logo-title {
-                font-size: 0.95rem !important;
-                margin-top: 0.15rem !important;
+                font-size: 0.85rem !important;
+                margin-top: 0 !important;
+                font-weight: 700 !important;
             }
 
-            /* 7. Groups become structured vertical touch card lists */
-            #orbit-main-group,
+            .logo-card-circle span[data-i18n="center_logo_partner"] {
+                font-size: 0.65rem !important;
+                margin-top: 0 !important;
+                opacity: 0.8;
+            }
+
+            /* 7. Main 3 Items Group on Mobile */
+            #orbit-main-group {
+                position: relative !important;
+                inset: auto !important;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                transform: none !important;
+                width: 100% !important;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 0.45rem !important;
+                margin: 0 !important;
+                pointer-events: auto !important;
+            }
+
+            #orbit-main-group .r-node {
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                transform: none !important;
+                width: 100% !important;
+                margin: 0 !important;
+            }
+
+            #orbit-main-group .r-node .glass-panel {
+                width: 100% !important;
+                min-height: 48px !important;
+                padding: 0.65rem 0.85rem !important;
+                border-radius: 0.875rem !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                text-align: center !important;
+                border-width: 1.5px !important;
+                box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2) !important;
+            }
+
+            #orbit-main-group .r-node .glass-panel h3 {
+                font-size: 0.85rem !important;
+                margin: 0 !important;
+                line-height: 1.2 !important;
+            }
+
+            #orbit-main-group .r-node .glass-panel p {
+                font-size: 0.68rem !important;
+                margin: 0.1rem 0 0 0 !important;
+                line-height: 1.2 !important;
+                opacity: 0.85;
+            }
+
+            /* 8. Sub-Groups on Mobile (About, Clients, Vacancies) - Compact 2x2 Grid */
             #orbit-about-group,
             #orbit-clients-group,
             #orbit-vacancies-group {
@@ -949,15 +1022,16 @@
                 bottom: auto !important;
                 transform: none !important;
                 width: 100% !important;
-                display: flex !important;
-                flex-direction: column !important;
-                gap: 0.75rem !important;
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 0.4rem !important;
                 margin: 0 !important;
                 pointer-events: auto !important;
             }
 
-            /* 8. Node wrappers reset to block flex items */
-            .radial-orbit-wrapper .r-node {
+            #orbit-about-group .r-node,
+            #orbit-clients-group .r-node,
+            #orbit-vacancies-group .r-node {
                 position: relative !important;
                 top: auto !important;
                 left: auto !important;
@@ -965,90 +1039,111 @@
                 bottom: auto !important;
                 transform: none !important;
                 width: 100% !important;
-                max-width: 100% !important;
                 margin: 0 !important;
-                z-index: 20 !important;
             }
 
-            /* 9. Card Visual Styling on Mobile */
-            .radial-orbit-wrapper .r-node .glass-panel {
+            #orbit-about-group .r-node .glass-panel,
+            #orbit-clients-group .r-node .glass-panel,
+            #orbit-vacancies-group .r-node .glass-panel {
                 width: 100% !important;
-                min-height: 72px !important;
-                padding: 1rem 1.25rem !important;
-                border-radius: 1.25rem !important;
+                height: 100% !important;
+                min-height: 52px !important;
+                padding: 0.5rem 0.55rem !important;
+                border-radius: 0.75rem !important;
                 display: flex !important;
                 flex-direction: column !important;
                 align-items: center !important;
                 justify-content: center !important;
                 text-align: center !important;
-                cursor: pointer !important;
-                border-width: 1.5px !important;
-                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
-                transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease, background 0.15s ease !important;
+                border-width: 1px !important;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15) !important;
             }
 
-            .radial-orbit-wrapper .r-node .glass-panel:active {
-                transform: scale(0.98) !important;
+            #orbit-about-group .r-node .glass-panel h3,
+            #orbit-clients-group .r-node .glass-panel h3,
+            #orbit-vacancies-group .r-node .glass-panel h3 {
+                font-size: 0.72rem !important;
+                line-height: 1.15 !important;
+                margin: 0 !important;
+                font-weight: 700 !important;
             }
 
-            .radial-orbit-wrapper .r-node .glass-panel h3 {
-                font-size: 0.95rem !important;
-                letter-spacing: 0.05em !important;
-                line-height: 1.25 !important;
+            #orbit-about-group .r-node .glass-panel p,
+            #orbit-clients-group .r-node .glass-panel p,
+            #orbit-vacancies-group .r-node .glass-panel p {
+                font-size: 0.62rem !important;
+                line-height: 1.15 !important;
+                margin-top: 0.1rem !important;
+                opacity: 0.8;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
             }
 
-            .radial-orbit-wrapper .r-node .glass-panel p {
+            /* Back Button (r-node-4) across the 2 columns */
+            .radial-orbit-wrapper .r-node-4 {
+                grid-column: span 2 !important;
+            }
+
+            .radial-orbit-wrapper .r-node-4 .glass-panel {
+                min-height: 36px !important;
+                padding: 0.4rem 0.75rem !important;
+                background: rgba(56, 189, 248, 0.15) !important;
+                border: 1.5px solid rgba(56, 189, 248, 0.45) !important;
+                box-shadow: 0 2px 12px rgba(56, 189, 248, 0.2) !important;
+                display: flex !important;
+                flex-direction: row !important;
+                align-items: center !important;
+                justify-content: center !important;
+                gap: 0.35rem !important;
+            }
+
+            .radial-orbit-wrapper .r-node-4 .glass-panel h3 {
                 font-size: 0.75rem !important;
-                line-height: 1.3 !important;
-                margin-top: 0.2rem !important;
             }
 
-            /* 10. Navigation Back Button (r-node-4) on Mobile */
-            .r-node-4 .glass-panel {
-                background: rgba(56, 189, 248, 0.14) !important;
-                border: 1.5px solid rgba(56, 189, 248, 0.5) !important;
-                box-shadow: 0 4px 18px rgba(56, 189, 248, 0.2) !important;
-                margin-top: 0.35rem !important;
+            .radial-orbit-wrapper .r-node-4 .glass-panel p {
+                display: none !important;
             }
 
-            /* 11. Light Theme Mobile Overrides */
+            /* Light Theme Mobile Overrides */
             body.light-theme .logo-card-circle {
                 background: #ffffff !important;
                 border-color: rgba(11, 32, 56, 0.16) !important;
-                box-shadow: 0 6px 20px rgba(11, 32, 56, 0.08) !important;
+                box-shadow: 0 4px 14px rgba(11, 32, 56, 0.08) !important;
             }
 
-            body.light-theme .radial-orbit-wrapper .r-node .glass-panel {
+            body.light-theme .radial-orbit-wrapper .glass-panel {
                 background: #ffffff !important;
                 border-color: rgba(11, 32, 56, 0.15) !important;
-                box-shadow: 0 4px 16px rgba(11, 32, 56, 0.06) !important;
+                box-shadow: 0 2px 8px rgba(11, 32, 56, 0.05) !important;
             }
 
-            body.light-theme .radial-orbit-wrapper .r-node .glass-panel:active {
+            body.light-theme .radial-orbit-wrapper .glass-panel:active {
                 background: #f0f7ff !important;
                 border-color: #0284c7 !important;
             }
 
-            body.light-theme .r-node-4 .glass-panel {
+            body.light-theme .radial-orbit-wrapper .r-node-4 .glass-panel {
                 background: #e0f2fe !important;
                 border-color: #0284c7 !important;
             }
 
-            /* 12. Modals on Mobile */
+            /* 9. Modals on Mobile */
             #about-modal-overlay > div {
                 width: 95vw !important;
-                max-width: 540px !important;
+                max-width: 520px !important;
                 max-height: 88vh !important;
-                padding: 1.25rem 1rem !important;
-                border-radius: 1.5rem !important;
+                padding: 1.15rem 0.9rem !important;
+                border-radius: 1.25rem !important;
             }
 
-            /* Input sizing on iOS to prevent auto-zoom */
             input, select, textarea {
                 font-size: 16px !important;
             }
 
-            /* 13. Toast Notification */
+            /* 10. Toast Notification */
             .toast-notification {
                 left: 1rem !important;
                 right: 1rem !important;
@@ -1056,16 +1151,20 @@
                 width: calc(100% - 2rem) !important;
             }
 
-            /* 14. Footer Mobile Flow */
+            /* 11. Footer Mobile Flow */
+            footer {
+                padding: 0.4rem 0.75rem !important;
+            }
+
             footer > div {
                 flex-direction: column !important;
-                gap: 0.75rem !important;
+                gap: 0.4rem !important;
             }
 
             footer .flex {
                 flex-wrap: wrap !important;
                 justify-content: center !important;
-                gap: 0.5rem 1rem !important;
+                gap: 0.4rem 0.75rem !important;
             }
         }
     </style>
@@ -2747,8 +2846,8 @@
                 </div>
             </div>
 
-            <!-- BOTTOM CALLOUT BANNER ON ALL PAGES -->
-            <div class="w-full max-w-5xl mx-auto mt-6 mb-4 px-3">
+            <!-- BOTTOM CALLOUT BANNER (DESKTOP ONLY) -->
+            <div class="w-full max-w-5xl mx-auto mt-6 mb-4 px-3 hidden lg:block">
                 <div class="glass-panel p-5 sm:p-6 rounded-2xl border border-sky-400/40 bg-sky-500/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left shadow-lg">
                     <div>
                         <h3 class="text-base sm:text-lg font-bold text-white font-heading">Не знаете с чего начать?</h3>
