@@ -10,6 +10,8 @@
     let _currentUser = null;
     let _passkeys = [];
     let _sessions = [];
+    let _authChecked = false;
+    let _checkPromise = null;
 
     // ─── API helpers ─────────────────────────────────────────────────────
     async function api(method, endpoint, body) {
@@ -38,17 +40,34 @@
     }
 
     // ─── Auth State ──────────────────────────────────────────────────────
-    async function checkAuth() {
-        try {
-            const data = await api('GET', '/me');
-            _currentUser = data.user;
-            _passkeys = data.passkeys || [];
-            return true;
-        } catch {
-            _currentUser = null;
-            _passkeys = [];
-            return false;
+    async function checkAuth(forceRefresh = false) {
+        if (!forceRefresh && _authChecked && !_checkPromise) {
+            return _currentUser !== null;
         }
+        if (_checkPromise) return _checkPromise;
+
+        _checkPromise = (async () => {
+            try {
+                const data = await api('GET', '/me');
+                _currentUser = data.user;
+                _passkeys = data.passkeys || [];
+                _authChecked = true;
+                return true;
+            } catch {
+                _currentUser = null;
+                _passkeys = [];
+                _authChecked = true;
+                return false;
+            } finally {
+                _checkPromise = null;
+            }
+        })();
+
+        return _checkPromise;
+    }
+
+    function isAuthChecked() {
+        return _authChecked;
     }
 
     function isLoggedIn() {
@@ -65,7 +84,10 @@
     }
 
     async function verifyOtp(email, code) {
-        return api('POST', '/otp/verify', { email, code });
+        const res = await api('POST', '/otp/verify', { email, code });
+        _authChecked = false;
+        await checkAuth(true);
+        return res;
     }
 
     // ─── Passkey: Register ───────────────────────────────────────────────
@@ -79,7 +101,9 @@
         const credential = await SimpleWebAuthnBrowser.startRegistration(options);
         credential.deviceName = deviceName || guessDeviceName();
 
-        return api('POST', '/webauthn/register/complete', credential);
+        const res = await api('POST', '/webauthn/register/complete', credential);
+        await checkAuth(true);
+        return res;
     }
 
     // ─── Passkey: Login ──────────────────────────────────────────────────
@@ -92,17 +116,24 @@
 
         const credential = await SimpleWebAuthnBrowser.startAuthentication(options);
 
-        return api('POST', '/webauthn/login/complete', { email, credential });
+        const res = await api('POST', '/webauthn/login/complete', { email, credential });
+        _authChecked = false;
+        await checkAuth(true);
+        return res;
     }
 
     // ─── Passkey: Delete ─────────────────────────────────────────────────
     async function deletePasskey(passkeyId) {
-        return api('DELETE', '/passkeys/' + passkeyId);
+        const res = await api('DELETE', '/passkeys/' + passkeyId);
+        await checkAuth(true);
+        return res;
     }
 
     // ─── Profile ─────────────────────────────────────────────────────────
     async function updateProfile(companyName, phone) {
-        return api('PATCH', '/profile', { companyName, phone });
+        const res = await api('PATCH', '/profile', { companyName, phone });
+        await checkAuth(true);
+        return res;
     }
 
     // ─── Sessions ────────────────────────────────────────────────────────
@@ -126,6 +157,7 @@
         _currentUser = null;
         _passkeys = [];
         _sessions = [];
+        _authChecked = true;
     }
 
     // ─── Utils ───────────────────────────────────────────────────────────
@@ -158,6 +190,7 @@
     // ─── Public API ──────────────────────────────────────────────────────
     window.AlmasAuth = {
         checkAuth,
+        isAuthChecked,
         isLoggedIn,
         getUser,
         sendMagicLink,
@@ -175,4 +208,7 @@
         getPasskeys: () => _passkeys,
         getSessions: () => _sessions,
     };
+
+    // Pre-check auth immediately in background
+    checkAuth().catch(() => {});
 })();

@@ -1091,6 +1091,7 @@
                 opacity: 0.8;
                 display: -webkit-box;
                 -webkit-line-clamp: 2;
+                line-clamp: 2;
                 -webkit-box-orient: vertical;
                 overflow: hidden;
             }
@@ -1874,7 +1875,7 @@
                         </div>
                         <div class="flex items-center gap-2">
                             <button id="cab-top-logout-btn" onclick="logoutCabinet()"
-                                class="glass-button px-3.5 py-2 rounded-xl text-xs font-bold text-rose-300 border border-rose-400/30 hover:bg-rose-500/20 flex items-center gap-1.5 font-heading">
+                                class="hidden glass-button px-3.5 py-2 rounded-xl text-xs font-bold text-rose-300 border border-rose-400/30 hover:bg-rose-500/20 flex items-center gap-1.5 font-heading">
                                 <span class="material-symbols-outlined text-sm">logout</span>
                                 <span data-i18n="btn_logout">Выйти</span>
                             </button>
@@ -1886,8 +1887,14 @@
                         </div>
                     </div>
 
+                    <!-- 0. LOADING SPINNER (Shown only during initial server auth check) -->
+                    <div id="cabinet-loading-view" class="hidden py-16 text-center text-slate-400 flex flex-col items-center justify-center gap-3">
+                        <span class="material-symbols-outlined text-3xl text-sky-400 animate-spin">progress_activity</span>
+                        <span class="text-xs font-medium">Проверка авторизации...</span>
+                    </div>
+
                     <!-- 1. AUTH / SIGN IN VIEW (Shown when logged out) -->
-                    <div id="cabinet-auth-view" class="space-y-6 max-w-md mx-auto my-6 text-center">
+                    <div id="cabinet-auth-view" class="hidden space-y-6 max-w-md mx-auto my-6 text-center">
                         <div class="w-16 h-16 rounded-3xl bg-sky-500/15 border border-sky-400/30 flex items-center justify-center mx-auto text-sky-300 shadow-[0_0_30px_rgba(56,189,248,0.2)]">
                             <span class="material-symbols-outlined text-3xl">lock</span>
                         </div>
@@ -1964,7 +1971,7 @@
                     </div>
 
                     <!-- 2. ACTIVE DASHBOARD VIEW (Shown when logged in) -->
-                    <div id="cabinet-dashboard-view" class="space-y-5">
+                    <div id="cabinet-dashboard-view" class="hidden space-y-5">
                         <!-- Top Info Banner & User Header -->
                         <div class="glass-panel p-4 sm:p-5 rounded-2xl border border-sky-400/40 bg-sky-500/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                             <div class="flex items-center gap-3">
@@ -3764,7 +3771,7 @@
                     setTimeout(calculateProjectRisks, 50);
                 }
                 if (cleanId === 'guest-status') {
-                    setTimeout(renderCabinetView, 40);
+                    renderCabinetView();
                 }
             }
 
@@ -3975,14 +3982,24 @@
 
         // ── Render Cabinet ────────────────────────────────────────────────
         async function renderCabinetView() {
-            const isAuth = await AlmasAuth.checkAuth();
-            const user = AlmasAuth.getUser();
-
+            const loadingBox = document.getElementById('cabinet-loading-view');
             const cabinetBox = document.getElementById('cabinet-dashboard-view');
             const authBox = document.getElementById('cabinet-auth-view');
             const topLogoutBtn = document.getElementById('cab-top-logout-btn');
             const userDisplay = document.getElementById('cabinet-user-email');
             const sessionTokenDisplay = document.getElementById('cabinet-session-token');
+
+            if (!AlmasAuth.isAuthChecked()) {
+                if (loadingBox) loadingBox.classList.remove('hidden');
+                if (authBox) authBox.classList.add('hidden');
+                if (cabinetBox) cabinetBox.classList.add('hidden');
+                if (topLogoutBtn) topLogoutBtn.classList.add('hidden');
+            }
+
+            const isAuth = await AlmasAuth.checkAuth();
+            const user = AlmasAuth.getUser();
+
+            if (loadingBox) loadingBox.classList.add('hidden');
 
             // Show passkey button if WebAuthn is supported
             const passkeySection = document.getElementById('auth-passkey-section');
@@ -3999,9 +4016,9 @@
                 renderCabinetProposals();
                 renderCabinetVacancies();
             } else {
-                if (authBox) authBox.classList.remove('hidden');
                 if (cabinetBox) cabinetBox.classList.add('hidden');
                 if (topLogoutBtn) topLogoutBtn.classList.add('hidden');
+                if (authBox) authBox.classList.remove('hidden');
                 resetAuthForm();
             }
         }
