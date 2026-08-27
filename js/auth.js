@@ -5,7 +5,8 @@
 (function () {
     'use strict';
 
-    const API = (window.location.protocol === 'file:' || !window.location.port || window.location.port !== '3000' && window.location.hostname === 'localhost' ? 'http://localhost:3000' : '') + '/api/auth';
+    const isLocalDev = window.location.protocol === 'file:' || ((window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') && window.location.port && window.location.port !== '3000');
+    const API = (isLocalDev ? 'http://localhost:3000' : '') + '/api/auth';
     let _currentUser = null;
     let _passkeys = [];
     let _sessions = [];
@@ -21,11 +22,16 @@
         try {
             const res = await fetch(API + endpoint, opts);
             const data = await res.json().catch(() => ({}));
-            if (!res.ok) throw new Error(data.error || `HTTP ${res.status}`);
+            if (!res.ok) {
+                if (res.status === 404 || res.status === 502 || res.status === 503) {
+                    throw new Error('В разработке, сервера не запущены.');
+                }
+                throw new Error(data.error || 'В разработке, сервера не запущены.');
+            }
             return data;
         } catch (err) {
-            if (err.name === 'TypeError' && err.message.includes('fetch')) {
-                throw new Error('Сервер не запущен. Откройте сайт через http://localhost:3000 или запустите: node server.js');
+            if (err.name === 'TypeError' && (err.message.includes('fetch') || err.message.includes('Failed to fetch') || err.message.includes('NetworkError') || !window.navigator.onLine)) {
+                throw new Error('В разработке, сервера не запущены.');
             }
             throw err;
         }

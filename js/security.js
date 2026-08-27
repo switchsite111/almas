@@ -291,11 +291,11 @@
       meta.httpEquiv = 'Content-Security-Policy';
       meta.content = [
         "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data:",
-        "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://fonts.googleapis.com https://cdnjs.cloudflare.com https://api.web3forms.com",
+        "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://fonts.googleapis.com https://cdnjs.cloudflare.com https://api.web3forms.com https://unpkg.com",
         "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com",
         "font-src 'self' https://fonts.gstatic.com https://fonts.googleapis.com data:",
         "img-src 'self' data: https: blob:",
-        "connect-src 'self' https://api.web3forms.com https://fonts.googleapis.com https://cdnjs.cloudflare.com",
+        "connect-src 'self' https://api.web3forms.com https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com",
         "object-src 'none'",
         "base-uri 'self'",
         "form-action 'self' https://api.web3forms.com",
