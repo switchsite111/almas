@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>АЛМАС — Ведущий Системный Интегратор и IT-Поставщик</title>
     <meta name="description"
         content="ООО АЛМАС — Ведущий поставщик и системный интегратор в сфере IT-инфраструктуры, модификации оборудования, серверных решений и строительства.">
@@ -17,7 +17,7 @@
     <meta property="og:url" content="https://almas-sys.ru/">
     <meta property="og:title" content="АЛМАС — Системный Интегратор IT-Инфраструктуры">
     <meta property="og:description" content="Поставка IT-оборудования, проектирование и системная интеграция высочайшего класса.">
-    <meta property="og:image" content="images/almas_logo.png">
+    <meta property="og:image" content="https://almas-sys.ru/images/almas_logo.png">
     <meta property="og:site_name" content="АЛМАС">
     <meta property="og:locale" content="ru_RU">
 
@@ -25,10 +25,10 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="АЛМАС — Системный Интегратор">
     <meta name="twitter:description" content="IT-инфраструктура, модификация и профессиональное строительство.">
-    <meta name="twitter:image" content="images/almas_logo.png">
+    <meta name="twitter:image" content="https://almas-sys.ru/images/almas_logo.png">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/almas_logo.png">
+    <link rel="icon" type="image/png" href="https://almas-sys.ru/images/almas_logo.png">
 
     <!-- Schema.org JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -97,6 +97,8 @@
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://unpkg.com/@simplewebauthn/browser@8/dist/bundle/index.umd.min.js"></script>
+    <script src="js/auth.js"></script>
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -1349,7 +1351,7 @@
                             <!-- Soft Ambient Back Glow without circle border -->
                             <div class="absolute inset-0 rounded-full bg-sky-400/10 blur-3xl group-hover:bg-sky-400/20 transition-all pointer-events-none"></div>
 
-                            <img src="almas_user_logo_transparent.png" alt="ALMAS Centered Core"
+                            <img src="images/almas_user_logo_transparent.png" alt="ALMAS Centered Core"
                                 class="logo-card-image object-contain logo-energy-aura select-none p-1 drop-shadow-[0_0_20px_rgba(56,189,248,0.4)] group-hover:scale-110 transition-transform relative z-10"
                                 onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><polygon points=\'50,10 90,45 50,90 10,45\' fill=\'%2338bdf8\' stroke=\'%23a7c8ff\' stroke-width=\'4\'/><text x=\'50\' y=\'55\' text-anchor=\'middle\' fill=\'white\' font-size=\'14\' font-weight=\'bold\'>АЛМАС</text></svg>'">
 
@@ -1618,9 +1620,9 @@
                         <div class="flex items-center gap-4">
                             <span class="material-symbols-outlined text-sky-400 text-4xl">category</span>
                             <div>
-                                <h2 class="text-3xl sm:text-4xl font-bold text-white font-heading">
+                                <h2 class="text-3xl sm:text-4xl font-bold text-white font-heading" data-i18n="offer_catalog_title">
                                     Каталог возможностей & Услуг ООО АЛМАС</h2>
-                                <p class="text-sm sm:text-base text-sky-300 font-bold mt-1.5">
+                                <p class="text-sm sm:text-base text-sky-300 font-bold mt-1.5" data-i18n="offer_catalog_desc">
                                     Занимаемся ВСЕМ под ключ: от проектов ЦОД, СКУД и систем безопасности до полной отделки объектов!
                                 </p>
                             </div>
@@ -1628,7 +1630,7 @@
                         <button onclick="openTab('hub')"
                             class="glass-button px-6 py-3 rounded-xl text-sm font-bold text-slate-200 flex items-center gap-2">
                             <span class="material-symbols-outlined text-sm">arrow_back</span>
-                            <span>В меню</span>
+                            <span data-i18n="btn_back">В меню</span>
                         </button>
                     </div>
 
@@ -1637,10 +1639,10 @@
                         <div class="flex items-start gap-4">
                             <span class="material-symbols-outlined text-sky-400 text-3xl shrink-0 mt-0.5">verified</span>
                             <div>
-                                <h3 class="text-lg sm:text-xl font-bold text-white font-heading mb-2">
+                                <h3 class="text-lg sm:text-xl font-bold text-white font-heading mb-2" data-i18n="offer_intro_title">
                                     Все желания заказчика — наша прямая забота
                                 </h3>
-                                <p class="text-sm sm:text-base text-slate-200 leading-relaxed">
+                                <p class="text-sm sm:text-base text-slate-200 leading-relaxed" data-i18n="offer_intro_desc">
                                     Не знаете, с чего начать или как сформулировать ТЗ? Мы берем на себя полный цикл: проводим аудит, разрабатываем проектно-сметную документацию, закупаем оборудование, выполняем монтажные работы и сдаем объект под ключ с финансовыми гарантиями.
                                 </p>
                             </div>
@@ -1655,12 +1657,12 @@
                                 <div class="w-12 h-12 rounded-xl bg-sky-400/20 text-sky-400 flex items-center justify-center mb-3.5 group-hover:scale-110 transition-transform">
                                     <span class="material-symbols-outlined text-2xl">dns</span>
                                 </div>
-                                <h4 class="font-bold text-white text-lg sm:text-xl font-heading mb-2.5">ЦОД & Серверные под ключ</h4>
-                                <p class="text-sm sm:text-base text-slate-200 leading-relaxed mb-4">
+                                <h4 class="font-bold text-white text-lg sm:text-xl font-heading mb-2.5" data-i18n="srv_1_title">ЦОД & Серверные под ключ</h4>
+                                <p class="text-sm sm:text-base text-slate-200 leading-relaxed mb-4" data-i18n="srv_1_desc">
                                     Проектирование и строительство серверных комнат, прецизионное кондиционирование, ИБП, стойки и фальшполы.
                                 </p>
                             </div>
-                            <button onclick="selectServiceDirection('Строительство ЦОД и Серверных')" class="w-full py-3 rounded-xl bg-sky-500/20 hover:bg-sky-400 text-sky-300 hover:text-black font-bold text-sm border border-sky-400/40 transition-all font-heading">
+                            <button onclick="selectServiceDirection('Строительство ЦОД и Серверных')" class="w-full py-3 rounded-xl bg-sky-500/20 hover:bg-sky-400 text-sky-300 hover:text-black font-bold text-sm border border-sky-400/40 transition-all font-heading" data-i18n="btn_choose_direction">
                                 Выбрать направление →
                             </button>
                         </div>
@@ -1671,12 +1673,12 @@
                                 <div class="w-12 h-12 rounded-xl bg-sky-400/20 text-sky-400 flex items-center justify-center mb-3.5 group-hover:scale-110 transition-transform">
                                     <span class="material-symbols-outlined text-2xl">security</span>
                                 </div>
-                                <h4 class="font-bold text-white text-lg sm:text-xl font-heading mb-2.5">СКУД & Турникеты</h4>
-                                <p class="text-sm sm:text-base text-slate-200 leading-relaxed mb-4">
+                                <h4 class="font-bold text-white text-lg sm:text-xl font-heading mb-2.5" data-i18n="srv_2_title">СКУД & Турникеты</h4>
+                                <p class="text-sm sm:text-base text-slate-200 leading-relaxed mb-4" data-i18n="srv_2_desc">
                                     Системы контроля доступа, биометрическая идентификация, турникеты, шлагбаумы и учет рабочего времени.
                                 </p>
                             </div>
-                            <button onclick="selectServiceDirection('СКУД и Контроль Доступа')" class="w-full py-3 rounded-xl bg-sky-500/20 hover:bg-sky-400 text-sky-300 hover:text-black font-bold text-sm border border-sky-400/40 transition-all font-heading">
+                            <button onclick="selectServiceDirection('СКУД и Контроль Доступа')" class="w-full py-3 rounded-xl bg-sky-500/20 hover:bg-sky-400 text-sky-300 hover:text-black font-bold text-sm border border-sky-400/40 transition-all font-heading" data-i18n="btn_choose_direction">
                                 Выбрать направление →
                             </button>
                         </div>
@@ -1687,12 +1689,12 @@
                                 <div class="w-12 h-12 rounded-xl bg-sky-400/20 text-sky-400 flex items-center justify-center mb-3.5 group-hover:scale-110 transition-transform">
                                     <span class="material-symbols-outlined text-2xl">videocam</span>
                                 </div>
-                                <h4 class="font-bold text-white text-lg sm:text-xl font-heading mb-2.5">Видеонаблюдение 24/7</h4>
-                                <p class="text-sm sm:text-base text-slate-200 leading-relaxed mb-4">
+                                <h4 class="font-bold text-white text-lg sm:text-xl font-heading mb-2.5" data-i18n="srv_3_title">Видеонаблюдение 24/7</h4>
+                                <p class="text-sm sm:text-base text-slate-200 leading-relaxed mb-4" data-i18n="srv_3_desc">
                                     IP-видеонаблюдение высокого разрешения, видеоаналитика, тепловизоры и периметральная охрана.
                                 </p>
                             </div>
-                            <button onclick="selectServiceDirection('Системы Видеонаблюдения')" class="w-full py-3 rounded-xl bg-sky-500/20 hover:bg-sky-400 text-sky-300 hover:text-black font-bold text-sm border border-sky-400/40 transition-all font-heading">
+                            <button onclick="selectServiceDirection('Системы Видеонаблюдения')" class="w-full py-3 rounded-xl bg-sky-500/20 hover:bg-sky-400 text-sky-300 hover:text-black font-bold text-sm border border-sky-400/40 transition-all font-heading" data-i18n="btn_choose_direction">
                                 Выбрать направление →
                             </button>
                         </div>
@@ -1703,12 +1705,12 @@
                                 <div class="w-12 h-12 rounded-xl bg-sky-400/20 text-sky-400 flex items-center justify-center mb-3.5 group-hover:scale-110 transition-transform">
                                     <span class="material-symbols-outlined text-2xl">hub</span>
                                 </div>
-                                <h4 class="font-bold text-white text-lg sm:text-xl font-heading mb-2.5">СКС & Оптические сети (ВОЛС)</h4>
-                                <p class="text-sm sm:text-base text-slate-200 leading-relaxed mb-4">
+                                <h4 class="font-bold text-white text-lg sm:text-xl font-heading mb-2.5" data-i18n="srv_4_title">СКС & Оптические сети (ВОЛС)</h4>
+                                <p class="text-sm sm:text-base text-slate-200 leading-relaxed mb-4" data-i18n="srv_4_desc">
                                     Структурированные кабельные системы, прокладка оптических трасс, патч-панели и сертификация сетей.
                                 </p>
                             </div>
-                            <button onclick="selectServiceDirection('СКС и ВОЛС Линии Связи')" class="w-full py-3 rounded-xl bg-sky-500/20 hover:bg-sky-400 text-sky-300 hover:text-black font-bold text-sm border border-sky-400/40 transition-all font-heading">
+                            <button onclick="selectServiceDirection('СКС и ВОЛС Линии Связи')" class="w-full py-3 rounded-xl bg-sky-500/20 hover:bg-sky-400 text-sky-300 hover:text-black font-bold text-sm border border-sky-400/40 transition-all font-heading" data-i18n="btn_choose_direction">
                                 Выбрать направление →
                             </button>
                         </div>
@@ -1719,12 +1721,12 @@
                                 <div class="w-12 h-12 rounded-xl bg-sky-400/20 text-sky-400 flex items-center justify-center mb-3.5 group-hover:scale-110 transition-transform">
                                     <span class="material-symbols-outlined text-2xl">construction</span>
                                 </div>
-                                <h4 class="font-bold text-white text-lg sm:text-xl font-heading mb-2.5">Ремонт & Вентиляция залов</h4>
-                                <p class="text-sm sm:text-base text-slate-200 leading-relaxed mb-4">
+                                <h4 class="font-bold text-white text-lg sm:text-xl font-heading mb-2.5" data-i18n="srv_5_title">Ремонт & Вентиляция залов</h4>
+                                <p class="text-sm sm:text-base text-slate-200 leading-relaxed mb-4" data-i18n="srv_5_desc">
                                     Отделочные работы офисных залов, монтаж климатического оборудования, вентиляции и электросетей.
                                 </p>
                             </div>
-                            <button onclick="selectServiceDirection('Ремонт и Климатические Системы')" class="w-full py-3 rounded-xl bg-sky-500/20 hover:bg-sky-400 text-sky-300 hover:text-black font-bold text-sm border border-sky-400/40 transition-all font-heading">
+                            <button onclick="selectServiceDirection('Ремонт и Климатические Системы')" class="w-full py-3 rounded-xl bg-sky-500/20 hover:bg-sky-400 text-sky-300 hover:text-black font-bold text-sm border border-sky-400/40 transition-all font-heading" data-i18n="btn_choose_direction">
                                 Выбрать направление →
                             </button>
                         </div>
@@ -1891,21 +1893,30 @@
                         </div>
                         <div>
                             <h3 class="text-xl font-bold text-white font-heading" data-i18n="cab_auth_title">Авторизация в Личном Кабинете</h3>
-                            <p class="text-xs text-slate-400 mt-1" data-i18n="cab_auth_desc">Введите ваши данные для доступа к сметам, КП и статусу откликов</p>
+                            <p class="text-xs text-slate-400 mt-1" data-i18n="cab_auth_desc">Введите email для получения безопасной ссылки для входа</p>
                         </div>
 
-                        <form onsubmit="loginPasswordless(event)" class="glass-panel p-6 rounded-2xl border border-sky-400/30 bg-sky-500/10 space-y-4 text-left">
+                        <!-- EMAIL FORM -->
+                        <div id="auth-email-step" class="glass-panel p-6 rounded-2xl border border-sky-400/30 bg-sky-500/10 space-y-4 text-left">
                             <div>
-                                <label class="block text-xs uppercase font-bold text-slate-300 mb-1" data-i18n="lbl_name">Компания / Ваше имя *</label>
-                                <input type="text" id="cabinet-ip-company" required placeholder="ООО Заказчик / ФИО" class="w-full text-xs">
+                                <label class="block text-xs uppercase font-bold text-slate-300 mb-1">Email *</label>
+                                <input type="email" id="cabinet-auth-email" required placeholder="you@company.ru" class="w-full text-xs" autocomplete="email">
                             </div>
-                            <div>
-                                <label class="block text-xs uppercase font-bold text-slate-300 mb-1" data-i18n="lbl_phone">Контактный телефон *</label>
-                                <input type="tel" id="cabinet-ip-phone" required placeholder="+7 (999) 000-00-00" class="w-full text-xs">
-                            </div>
-                            <button type="submit" class="w-full glass-button py-3.5 rounded-xl bg-gradient-to-r from-sky-400 to-blue-600 text-white font-bold text-xs uppercase tracking-wider font-heading hover:scale-[1.01] transition-all shadow-[0_0_25px_rgba(56,189,248,0.4)]">
-                                <span data-i18n="btn_do_login">Войти в кабинет</span>
+                            <button type="button" id="btn-send-magic-link" onclick="handleSendMagicLink()" class="w-full glass-button py-3.5 rounded-xl bg-gradient-to-r from-sky-400 to-blue-600 text-white font-bold text-xs uppercase tracking-wider font-heading hover:scale-[1.01] transition-all shadow-[0_0_25px_rgba(56,189,248,0.4)] flex items-center justify-center gap-2 cursor-pointer">
+                                <span class="material-symbols-outlined text-base">mail</span>
+                                <span>Отправить ссылку для входа</span>
                             </button>
+                            <div id="auth-passkey-section" class="hidden">
+                                <div class="flex items-center gap-3 my-3">
+                                    <div class="flex-1 h-px bg-white/10"></div>
+                                    <span class="text-[10px] text-slate-500 uppercase tracking-widest">или</span>
+                                    <div class="flex-1 h-px bg-white/10"></div>
+                                </div>
+                                <button type="button" id="btn-passkey-login" onclick="handlePasskeyLogin()" class="w-full glass-button py-3 rounded-xl text-xs font-bold text-emerald-300 border border-emerald-400/30 hover:bg-emerald-500/15 flex items-center justify-center gap-2 font-heading cursor-pointer">
+                                    <span class="material-symbols-outlined text-base">fingerprint</span>
+                                    <span>Войти с Passkey (Face ID / Touch ID)</span>
+                                </button>
+                            </div>
                             <div class="flex items-start gap-2.5 pt-2 text-[11px] text-slate-400 leading-snug">
                                 <input type="checkbox" id="consent-cabinet" required checked class="mt-0.5 rounded text-sky-400 bg-slate-900 border-white/30 focus:ring-0 shrink-0">
                                 <label for="consent-cabinet">
@@ -1915,7 +1926,41 @@
                                     и согласен на <a href="javascript:void(0)" onclick="openLegalDocument('fz152')" class="text-sky-300 underline font-semibold" data-i18n="link_fz152">обработку персональных данных (152-ФЗ)</a>. *
                                 </label>
                             </div>
-                        </form>
+                        </div>
+
+                        <!-- SENT CONFIRMATION -->
+                        <div id="auth-sent-step" class="glass-panel p-6 rounded-2xl border border-emerald-400/30 bg-emerald-500/10 space-y-4 text-center hidden">
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center mx-auto text-emerald-300">
+                                <span class="material-symbols-outlined text-3xl">mark_email_read</span>
+                            </div>
+                            <h4 class="text-base font-bold text-white font-heading">Введите код или перейдите по ссылке</h4>
+                            <p class="text-xs text-slate-300 leading-relaxed">Мы отправили письмо на <strong id="auth-sent-email" class="text-emerald-300"></strong>.</p>
+                            
+                            <!-- 6-digit OTP input -->
+                            <div class="space-y-3 pt-2">
+                                <label class="block text-[11px] uppercase tracking-wider text-slate-300 font-bold">6-значный код из письма:</label>
+                                <input type="text" id="auth-otp-code" maxlength="6" inputmode="numeric" placeholder="123456" oninput="handleOtpInput(this)" class="w-full text-center text-xl font-bold font-mono tracking-[8px] py-3 rounded-xl bg-black/40 border border-emerald-400/50 text-emerald-300 focus:ring-emerald-400 focus:border-emerald-400">
+                                <button type="button" id="btn-verify-otp" onclick="handleVerifyOtp()" class="w-full glass-button py-3 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-black font-bold text-xs uppercase tracking-wider font-heading shadow-[0_0_20px_rgba(52,211,153,0.4)] flex items-center justify-center gap-2">
+                                    <span class="material-symbols-outlined text-base">verified</span>
+                                    <span>Войти по коду</span>
+                                </button>
+                            </div>
+
+                            <!-- 1-Click Dev Link Button (Active when SMTP is not configured) -->
+                            <div id="dev-magic-link-box" class="hidden pt-2 border-t border-white/10">
+                                <a id="dev-magic-link-btn" href="#" class="w-full glass-button py-2.5 px-4 rounded-xl bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-400/40 text-xs font-bold font-heading flex items-center justify-center gap-2">
+                                    <span class="material-symbols-outlined text-base">login</span>
+                                    <span>Войти в 1 клик (Тестовый вход)</span>
+                                </a>
+                            </div>
+
+                            <button type="button" onclick="resetAuthForm()" class="glass-button px-5 py-2 rounded-xl text-xs text-slate-300 border border-white/10 font-heading cursor-pointer mt-2">
+                                ← Ввести другой email
+                            </button>
+                        </div>
+
+                        <!-- ERROR MESSAGE -->
+                        <div id="auth-error-msg" class="hidden glass-panel p-4 rounded-xl border border-rose-400/30 bg-rose-500/10 text-xs text-rose-300 text-center"></div>
                     </div>
 
                     <!-- 2. ACTIVE DASHBOARD VIEW (Shown when logged in) -->
@@ -2056,22 +2101,47 @@
                         </div>
 
                         <!-- TAB 4: SECURITY & DATA -->
-                        <div id="cab-view-security" class="cab-view-pane space-y-4 hidden">
-                            <div class="glass-panel p-5 rounded-2xl border border-sky-400/30 bg-sky-500/10 space-y-3">
-                                <h4 class="text-sm font-bold text-white font-heading flex items-center gap-2">
-                                    <span class="material-symbols-outlined text-sky-400">verified_user</span>
-                                    <span data-i18n="cab_sec_title">Безопасность локальной сессии АЛМАС</span>
-                                </h4>
-                                <p class="text-xs text-slate-300 leading-relaxed" data-i18n="cab_sec_desc">
-                                    Ваша сессия защищена уникальным цифровым отпечатком. Расчеты смет и персональные отклики сохраняются исключительно в вашем браузере и передаются на сервер по защищенному каналу SSL/TLS.
-                                </p>
+                        <div id="cab-view-security" class="cab-view-pane space-y-5 hidden">
+
+                            <!-- PASSKEYS MANAGEMENT -->
+                            <div class="glass-panel p-5 rounded-2xl border border-sky-400/30 bg-sky-500/10 space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-sm font-bold text-white font-heading flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-sky-400">fingerprint</span>
+                                        <span>Passkeys (Face ID / Touch ID / PIN)</span>
+                                    </h4>
+                                    <button onclick="handleRegisterPasskey()" class="glass-button px-3 py-1.5 rounded-xl text-xs font-bold text-sky-300 border border-sky-400/30 hover:bg-sky-400/20 flex items-center gap-1.5 font-heading cursor-pointer">
+                                        <span class="material-symbols-outlined text-sm">add</span>
+                                        <span>Привязать устройство</span>
+                                    </button>
+                                </div>
+                                <p class="text-[11px] text-slate-400 leading-relaxed">Привяжите Passkey для быстрого входа без email. Биометрические данные хранятся только на вашем устройстве и никогда не передаются на сервер.</p>
+                                <div id="passkeys-list" class="space-y-2">
+                                    <div class="text-xs text-slate-500 text-center py-3">Загрузка...</div>
+                                </div>
                             </div>
+
+                            <!-- ACTIVE SESSIONS -->
+                            <div class="glass-panel p-5 rounded-2xl border border-emerald-400/30 bg-emerald-500/10 space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <h4 class="text-sm font-bold text-white font-heading flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-emerald-400">devices</span>
+                                        <span>Активные сессии</span>
+                                    </h4>
+                                    <button onclick="handleTerminateAllSessions()" class="glass-button px-3 py-1.5 rounded-xl text-xs font-bold text-rose-300 border border-rose-400/30 hover:bg-rose-500/15 flex items-center gap-1.5 font-heading cursor-pointer">
+                                        <span class="material-symbols-outlined text-sm">logout</span>
+                                        <span>Завершить все</span>
+                                    </button>
+                                </div>
+                                <div id="sessions-list" class="space-y-2">
+                                    <div class="text-xs text-slate-500 text-center py-3">Загрузка...</div>
+                                </div>
+                            </div>
+
+                            <!-- ACTIONS -->
                             <div class="flex flex-col sm:flex-row gap-3">
-                                <button onclick="logoutCabinet()" class="flex-1 glass-button py-3 rounded-xl text-xs font-bold text-amber-300 border border-amber-400/30 hover:bg-amber-500/20 font-heading">
-                                    <span data-i18n="btn_logout">Выйти из личного кабинета</span>
-                                </button>
-                                <button onclick="clearCabinetSession()" class="flex-1 glass-button py-3 rounded-xl text-xs font-bold text-rose-300 border border-rose-400/30 hover:bg-rose-500/20 font-heading">
-                                    <span data-i18n="cab_sec_clear_all">Очистить локальные данные</span>
+                                <button onclick="logoutCabinet()" class="flex-1 glass-button py-3 rounded-xl text-xs font-bold text-amber-300 border border-amber-400/30 hover:bg-amber-500/20 font-heading cursor-pointer">
+                                    <span>Выйти из личного кабинета</span>
                                 </button>
                             </div>
                         </div>
@@ -3166,7 +3236,41 @@
                 vac_b4_title: "Минимум бюрократии",
                 vac_b4_desc: "Прямой контакт с генеральным директором и ГИПами. Быстрое согласование смет, закупки оборудования без волокиты.",
                 lbl_cloud_link_kp: "Или ссылка на облачный диск (Яндекс.Диск / Google Drive)",
-                lbl_cloud_link: "Ссылка на резюме / облачный диск (Яндекс.Диск / Google Drive / hh.ru):"
+                lbl_cloud_link: "Ссылка на резюме / облачный диск (Яндекс.Диск / Google Drive / hh.ru):",
+                offer_catalog_title: "Каталог возможностей & Услуг ООО АЛМАС",
+                offer_catalog_desc: "Занимаемся ВСЕМ под ключ: от проектов ЦОД, СКУД и систем безопасности до полной отделки объектов!",
+                offer_intro_title: "Все желания заказчика — наша прямая забота",
+                offer_intro_desc: "Не знаете, с чего начать или как сформулировать ТЗ? Мы берем на себя полный цикл: проводим аудит, разрабатываем проектно-сметную документацию, закупаем оборудование, выполняем монтажные работы и сдаем объект под ключ с финансовыми гарантиями.",
+                srv_1_title: "ЦОД & Серверные под ключ",
+                srv_1_desc: "Проектирование и строительство серверных комнат, прецизионное кондиционирование, ИБП, стойки и фальшполы.",
+                srv_2_title: "СКУД & Турникеты",
+                srv_2_desc: "Системы контроля доступа, биометрическая идентификация, турникеты, шлагбаумы и учет рабочего времени.",
+                srv_3_title: "Видеонаблюдение 24/7",
+                srv_3_desc: "IP-видеонаблюдение высокого разрешения, видеоаналитика, тепловизоры и периметральная охрана.",
+                srv_4_title: "СКС & Оптические сети (ВОЛС)",
+                srv_4_desc: "Структурированные кабельные системы, прокладка оптических трасс, патч-панели и сертификация сетей.",
+                srv_5_title: "Ремонт & Вентиляция залов",
+                srv_5_desc: "Отделочные работы офисных залов, монтаж климатического оборудования, вентиляции и электросетей.",
+                srv_6_title: "Разработка ТЗ & Интеграция",
+                srv_6_desc: "Составим правильное ТЗ с нуля, проведем аудит под ваш бюджет и обучим персонал компании.",
+                btn_choose_direction: "Выбрать направление →",
+                offer_bottom_title: "Готовы приступить к обсуждению?",
+                offer_bottom_sub: "Выберите инструмент для старта работы:",
+                btn_diag: "Диагностика",
+                btn_req_kp: "Запрос КП",
+                btn_send_link: "Отправить ссылку для входа",
+                btn_login_passkey: "Войти с Passkey (Face ID / Touch ID)",
+                sent_title: "Введите код или перейдите по ссылке",
+                lbl_otp_code: "6-значный код из письма:",
+                btn_verify_otp: "Войти по коду",
+                btn_dev_login: "Войти в 1 клик (Тестовый вход)",
+                btn_other_email: "← Ввести другой email",
+                sec_passkeys_title: "Passkeys (Face ID / Touch ID / PIN)",
+                sec_passkeys_desc: "Привяжите Passkey для быстрого входа без email. Биометрические данные хранятся только на вашем устройстве и никогда не передаются на сервер.",
+                btn_link_device: "Привязать устройство",
+                sec_sessions_title: "Активные сессии",
+                btn_terminate_all: "Завершить все",
+                btn_logout_cab: "Выйти из личного кабинета"
             },
             en: {
                 header_sub: "System Integrator",
@@ -3370,7 +3474,41 @@
                 vac_b4_title: "Zero Bureaucracy",
                 vac_b4_desc: "Direct communication with leadership. Fast approvals of estimates and hardware procurement.",
                 lbl_cloud_link_kp: "Or cloud storage link (Yandex.Disk / Google Drive)",
-                lbl_cloud_link: "Resume link / cloud storage (Yandex.Disk / Google Drive / hh.ru):"
+                lbl_cloud_link: "Resume link / cloud storage (Yandex.Disk / Google Drive / hh.ru):",
+                offer_catalog_title: "Capabilities & Services Catalog LLC ALMAS",
+                offer_catalog_desc: "Turnkey delivery for EVERYTHING: data centers, access control, security systems and full facility refurbishment!",
+                offer_intro_title: "Every Client Need — Our Direct Priority",
+                offer_intro_desc: "Don't know where to start or how to formulate a specification? We manage the complete cycle: auditing, project documentation, hardware procurement, installation and turnkey handover with financial guarantees.",
+                srv_1_title: "Turnkey Data Centers & Server Rooms",
+                srv_1_desc: "Design and construction of server rooms, precision cooling, UPS, server racks and raised floors.",
+                srv_2_title: "Access Control & Turnstiles",
+                srv_2_desc: "Access control systems, biometric authentication, turnstiles, barrier gates and time tracking.",
+                srv_3_title: "24/7 Video Surveillance",
+                srv_3_desc: "High-resolution IP surveillance, video analytics, thermal imaging and perimeter security.",
+                srv_4_title: "SCS & Optical Networks (FOCL)",
+                srv_4_desc: "Structured cabling systems, fiber optic routing, patch panels and certified network testing.",
+                srv_5_title: "Facility Refurbishment & HVAC",
+                srv_5_desc: "Office and hall finishing, climate control installation, industrial ventilation and power wiring.",
+                srv_6_title: "Spec Development & Systems Integration",
+                srv_6_desc: "Custom technical specifications from scratch, budget optimization audits and corporate staff training.",
+                btn_choose_direction: "Select Solution →",
+                offer_bottom_title: "Ready to Discuss Your Project?",
+                offer_bottom_sub: "Choose an entry tool to get started:",
+                btn_diag: "Express Audit",
+                btn_req_kp: "Request Quote",
+                btn_send_link: "Send Login Link",
+                btn_login_passkey: "Sign in with Passkey (Face ID / Touch ID)",
+                sent_title: "Enter Code or Follow the Link",
+                lbl_otp_code: "6-Digit Code from Email:",
+                btn_verify_otp: "Sign in with Code",
+                btn_dev_login: "1-Click Login (Dev Mode)",
+                btn_other_email: "← Use Another Email",
+                sec_passkeys_title: "Passkeys (Face ID / Touch ID / PIN)",
+                sec_passkeys_desc: "Link a Passkey for instant login without email. Biometric data is stored securely on your device and never sent to the server.",
+                btn_link_device: "Link Device",
+                sec_sessions_title: "Active Sessions",
+                btn_terminate_all: "Terminate All",
+                btn_logout_cab: "Sign Out"
             }
         };
 
@@ -3698,84 +3836,251 @@
             }
         }
 
-        /* PERSONAL ACCOUNT MULTI-TAB PORTAL LOGIC WITH DIGITAL FINGERPRINT */
+        /* PERSONAL ACCOUNT — SERVER-SIDE AUTH LOGIC */
         let activeCabinetTab = 'overview';
         let activeVacPageTab = 'form';
 
-        function getClientIp() {
-            let savedIp = localStorage.getItem('almas_client_ip');
-            if (!savedIp) {
-                savedIp = '89.178.' + Math.floor(100 + Math.random() * 90) + '.' + Math.floor(10 + Math.random() * 200);
-                localStorage.setItem('almas_client_ip', savedIp);
-            }
-            return savedIp;
-        }
-
         function getSessionUser() {
-            const company = localStorage.getItem('almas_ip_company');
-            if (company) return company;
-            return 'Инвестор / Заказчик';
+            const user = AlmasAuth.getUser();
+            if (user) return user.companyName || user.email;
+            return 'Гость';
         }
 
-        function saveIpProfileInfo(e) {
-            if (e) e.preventDefault();
-            const companyInput = document.getElementById('cabinet-ip-company') || document.getElementById('modal-ip-company');
-            const phoneInput = document.getElementById('cabinet-ip-phone') || document.getElementById('modal-ip-phone');
-            if (companyInput && companyInput.value.trim()) {
-                localStorage.setItem('almas_ip_company', companyInput.value.trim());
+        // ── Magic Link: Send ─────────────────────────────────────────────
+        async function handleSendMagicLink() {
+            const emailInput = document.getElementById('cabinet-auth-email');
+            const errorBox = document.getElementById('auth-error-msg');
+            const btn = document.getElementById('btn-send-magic-link');
+            if (!emailInput || !emailInput.value.trim()) return;
+
+            const email = emailInput.value.trim();
+            errorBox && errorBox.classList.add('hidden');
+            btn.disabled = true;
+            btn.innerHTML = '<span class="material-symbols-outlined text-base animate-spin">progress_activity</span> <span>Отправка...</span>';
+
+            try {
+                const res = await AlmasAuth.sendMagicLink(email);
+                document.getElementById('auth-email-step').classList.add('hidden');
+                document.getElementById('auth-sent-step').classList.remove('hidden');
+                document.getElementById('auth-sent-email').textContent = email;
+
+                const devBox = document.getElementById('dev-magic-link-box');
+                const devBtn = document.getElementById('dev-magic-link-btn');
+                if (res && res.devLink && devBox && devBtn) {
+                    devBtn.href = res.devLink;
+                    devBox.classList.remove('hidden');
+                } else if (devBox) {
+                    devBox.classList.add('hidden');
+                }
+
+                playGlassChime(1050, 0.1);
+            } catch (err) {
+                if (errorBox) {
+                    errorBox.textContent = err.message;
+                    errorBox.classList.remove('hidden');
+                }
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<span class="material-symbols-outlined text-base">mail</span> <span>Отправить ссылку для входа</span>';
             }
-            if (phoneInput && phoneInput.value.trim()) {
-                localStorage.setItem('almas_ip_phone', phoneInput.value.trim());
+        }
+
+        function resetAuthForm() {
+            document.getElementById('auth-email-step').classList.remove('hidden');
+            document.getElementById('auth-sent-step').classList.add('hidden');
+            document.getElementById('auth-error-msg')?.classList.add('hidden');
+            const otpInput = document.getElementById('auth-otp-code');
+            if (otpInput) otpInput.value = '';
+        }
+
+        function handleOtpInput(input) {
+            input.value = input.value.replace(/[^0-9]/g, '');
+            if (input.value.length === 6) {
+                handleVerifyOtp();
             }
-            localStorage.setItem('almas_auth_active', 'true');
-            showToast('Авторизация успешна. Профиль активирован.');
-            playGlassChime(1050, 0.1);
-            renderCabinetView();
         }
 
-        function loginPasswordless(e) {
-            if (e) e.preventDefault();
-            saveIpProfileInfo(e);
+        async function handleVerifyOtp() {
+            const email = document.getElementById('cabinet-auth-email')?.value.trim();
+            const otpInput = document.getElementById('auth-otp-code');
+            const errorBox = document.getElementById('auth-error-msg');
+            const btn = document.getElementById('btn-verify-otp');
+            if (!email || !otpInput || !otpInput.value.trim()) return;
+
+            const code = otpInput.value.trim();
+            if (code.length !== 6) {
+                if (errorBox) { errorBox.textContent = 'Введите 6-значный код полностью'; errorBox.classList.remove('hidden'); }
+                return;
+            }
+
+            errorBox && errorBox.classList.add('hidden');
+            btn.disabled = true;
+            btn.innerHTML = '<span class="material-symbols-outlined text-base animate-spin">progress_activity</span> <span>Проверка...</span>';
+
+            try {
+                await AlmasAuth.verifyOtp(email, code);
+                showToast('Вход успешно выполнен!');
+                playGlassChime(1200, 0.1);
+                await renderCabinetView();
+            } catch (err) {
+                if (errorBox) {
+                    errorBox.textContent = err.message || 'Неверный код';
+                    errorBox.classList.remove('hidden');
+                }
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<span class="material-symbols-outlined text-base">verified</span> <span>Войти по коду</span>';
+            }
         }
 
-        function logoutCabinet() {
-            localStorage.setItem('almas_auth_active', 'false');
+        // ── Passkey Login ─────────────────────────────────────────────────
+        async function handlePasskeyLogin() {
+            const emailInput = document.getElementById('cabinet-auth-email');
+            const errorBox = document.getElementById('auth-error-msg');
+            if (!emailInput || !emailInput.value.trim()) {
+                if (errorBox) { errorBox.textContent = 'Введите email для входа через Passkey'; errorBox.classList.remove('hidden'); }
+                return;
+            }
+            try {
+                await AlmasAuth.loginWithPasskey(emailInput.value.trim());
+                showToast('Авторизация через Passkey успешна!');
+                playGlassChime(1200, 0.1);
+                await renderCabinetView();
+            } catch (err) {
+                if (errorBox) { errorBox.textContent = err.message; errorBox.classList.remove('hidden'); }
+            }
+        }
+
+        // ── Passkey Register (from dashboard) ────────────────────────────
+        async function handleRegisterPasskey() {
+            const deviceName = prompt('Название устройства (например, "MacBook", "iPhone"):');
+            if (deviceName === null) return;
+            try {
+                await AlmasAuth.registerPasskey(deviceName || undefined);
+                showToast('Passkey успешно привязан!');
+                playGlassChime(1200, 0.1);
+                renderSecurityTab();
+            } catch (err) {
+                showToast('Ошибка: ' + err.message);
+            }
+        }
+
+        // ── Logout ────────────────────────────────────────────────────────
+        async function logoutCabinet() {
+            await AlmasAuth.logout();
             showToast('Вы вышли из личного кабинета');
             playGlassChime(750, 0.08);
             renderCabinetView();
         }
 
-        function renderCabinetView() {
-            const isAuth = localStorage.getItem('almas_auth_active') === 'true';
-            const userLabel = getSessionUser();
+        // ── Render Cabinet ────────────────────────────────────────────────
+        async function renderCabinetView() {
+            const isAuth = await AlmasAuth.checkAuth();
+            const user = AlmasAuth.getUser();
 
             const cabinetBox = document.getElementById('cabinet-dashboard-view');
             const authBox = document.getElementById('cabinet-auth-view');
             const topLogoutBtn = document.getElementById('cab-top-logout-btn');
             const userDisplay = document.getElementById('cabinet-user-email');
             const sessionTokenDisplay = document.getElementById('cabinet-session-token');
-            const companyInput = document.getElementById('cabinet-ip-company');
-            const phoneInput = document.getElementById('cabinet-ip-phone');
 
-            if (companyInput && !companyInput.value) companyInput.value = localStorage.getItem('almas_ip_company') || '';
-            if (phoneInput && !phoneInput.value) phoneInput.value = localStorage.getItem('almas_ip_phone') || '';
+            // Show passkey button if WebAuthn is supported
+            const passkeySection = document.getElementById('auth-passkey-section');
+            if (passkeySection && AlmasAuth.supportsWebAuthn()) {
+                passkeySection.classList.remove('hidden');
+            }
 
-            if (isAuth) {
+            if (isAuth && user) {
                 if (authBox) authBox.classList.add('hidden');
                 if (cabinetBox) cabinetBox.classList.remove('hidden');
                 if (topLogoutBtn) topLogoutBtn.classList.remove('hidden');
-                if (userDisplay) userDisplay.textContent = userLabel;
-                if (sessionTokenDisplay) {
-                    const ipPart = getClientIp().split('.').slice(-2).join('');
-                    sessionTokenDisplay.textContent = 'АЛМАС-ID-' + ipPart;
-                }
+                if (userDisplay) userDisplay.textContent = user.companyName || user.email;
+                if (sessionTokenDisplay) sessionTokenDisplay.textContent = user.email;
                 renderCabinetProposals();
                 renderCabinetVacancies();
             } else {
                 if (authBox) authBox.classList.remove('hidden');
                 if (cabinetBox) cabinetBox.classList.add('hidden');
                 if (topLogoutBtn) topLogoutBtn.classList.add('hidden');
+                resetAuthForm();
             }
+        }
+
+        // ── Render Security Tab ───────────────────────────────────────────
+        async function renderSecurityTab() {
+            // Passkeys
+            await AlmasAuth.checkAuth();
+            const passkeys = AlmasAuth.getPasskeys();
+            const pkContainer = document.getElementById('passkeys-list');
+            if (pkContainer) {
+                if (passkeys.length === 0) {
+                    pkContainer.innerHTML = '<div class="text-xs text-slate-500 text-center py-3">Нет привязанных устройств. Нажмите "Привязать устройство" для добавления.</div>';
+                } else {
+                    pkContainer.innerHTML = passkeys.map(pk => `
+                        <div class="flex items-center justify-between bg-white/5 p-3 rounded-xl border border-white/10">
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-sky-400">fingerprint</span>
+                                <div>
+                                    <div class="text-xs font-bold text-white">${pk.device_name}</div>
+                                    <div class="text-[10px] text-slate-400">Добавлен: ${new Date(pk.created_at).toLocaleDateString('ru-RU')}${pk.last_used_at ? ' • Использован: ' + AlmasAuth.timeAgo(pk.last_used_at) : ''}</div>
+                                </div>
+                            </div>
+                            <button onclick="handleDeletePasskey('${pk.id}')" class="glass-button px-2.5 py-1 rounded-lg text-[10px] text-rose-300 border border-rose-400/30 hover:bg-rose-500/15 cursor-pointer">
+                                <span class="material-symbols-outlined text-xs">delete</span>
+                            </button>
+                        </div>
+                    `).join('');
+                }
+            }
+
+            // Sessions
+            try {
+                const sessions = await AlmasAuth.loadSessions();
+                const sessContainer = document.getElementById('sessions-list');
+                if (sessContainer) {
+                    sessContainer.innerHTML = sessions.map(s => `
+                        <div class="flex items-center justify-between bg-white/5 p-3 rounded-xl border ${s.isCurrent ? 'border-emerald-400/30' : 'border-white/10'}">
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined ${s.isCurrent ? 'text-emerald-400' : 'text-slate-400'}">${s.device_summary === 'Windows' ? 'computer' : s.device_summary === 'iOS' || s.device_summary === 'Android' ? 'smartphone' : 'devices'}</span>
+                                <div>
+                                    <div class="text-xs font-bold text-white flex items-center gap-2">
+                                        ${s.device_summary || 'Unknown'}
+                                        ${s.isCurrent ? '<span class="px-1.5 py-0.5 rounded text-[9px] bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">Текущая</span>' : ''}
+                                    </div>
+                                    <div class="text-[10px] text-slate-400">IP: ${s.ip_address || '—'} • ${AlmasAuth.timeAgo(s.last_active_at)}</div>
+                                </div>
+                            </div>
+                            ${!s.isCurrent ? `<button onclick="handleDeleteSession('${s.id}')" class="glass-button px-2.5 py-1 rounded-lg text-[10px] text-rose-300 border border-rose-400/30 hover:bg-rose-500/15 cursor-pointer"><span class="material-symbols-outlined text-xs">close</span></button>` : ''}
+                        </div>
+                    `).join('');
+                }
+            } catch { /* ignore if not loaded */ }
+        }
+
+        async function handleDeletePasskey(id) {
+            if (!confirm('Удалить этот Passkey?')) return;
+            try {
+                await AlmasAuth.deletePasskey(id);
+                showToast('Passkey удалён');
+                renderSecurityTab();
+            } catch (err) { showToast('Ошибка: ' + err.message); }
+        }
+
+        async function handleDeleteSession(id) {
+            try {
+                await AlmasAuth.deleteSession(id);
+                showToast('Сессия завершена');
+                renderSecurityTab();
+            } catch (err) { showToast('Ошибка: ' + err.message); }
+        }
+
+        async function handleTerminateAllSessions() {
+            if (!confirm('Завершить все сессии кроме текущей?')) return;
+            try {
+                const data = await AlmasAuth.deleteAllSessions();
+                showToast('Завершено сессий: ' + (data.terminated || 0));
+                renderSecurityTab();
+            } catch (err) { showToast('Ошибка: ' + err.message); }
         }
 
         function switchCabinetTab(tabName) {
@@ -3799,6 +4104,7 @@
 
             if (tabName === 'kp') renderCabinetProposals();
             if (tabName === 'vacancies') renderCabinetVacancies();
+            if (tabName === 'security') renderSecurityTab();
         }
 
         /* VACANCIES PAGE SUBTAB SWITCHER */
@@ -3858,14 +4164,6 @@
             };
 
             saveJobApplication(appRecord);
-
-            if (name && !localStorage.getItem('almas_ip_company')) {
-                localStorage.setItem('almas_ip_company', name);
-            }
-            if (phone && !localStorage.getItem('almas_ip_phone')) {
-                localStorage.setItem('almas_ip_phone', phone);
-            }
-            localStorage.setItem('almas_auth_active', 'true');
 
             sendGuaranteedEmail(`Отклик на вакансию: ${role}`, `ФИО Кандидата: ${name}\nEmail: ${email}\nТелефон: ${phone}\nСпециальность: ${role}\nОпыт и навыки:\n${experience}\nСсылка на облако: ${cloudLink || 'Не указана'}`);
 
@@ -3945,8 +4243,9 @@
             playGlassChime(1200, 0.1);
             showToast(`Формирование спецификации PDF (${kpId})...`);
 
-            const company = localStorage.getItem('almas_ip_company') || 'ООО Заказчик';
-            const phone = localStorage.getItem('almas_ip_phone') || '+7 (999) 000-00-00';
+            const user = AlmasAuth.getUser();
+            const company = (user && user.companyName) || 'ООО Заказчик';
+            const phone = (user && user.phone) || '+7 (999) 000-00-00';
             const date = new Date().toLocaleDateString('ru-RU');
 
             const docContent = `
@@ -4052,17 +4351,6 @@
                     </div>
                 </div>
             `).join('');
-        }
-
-        function clearCabinetSession() {
-            localStorage.removeItem('almas_ip_company');
-            localStorage.removeItem('almas_ip_phone');
-            localStorage.removeItem('almas_auth_active');
-            localStorage.removeItem('almas_job_apps');
-            localStorage.removeItem('almas_submissions');
-            showToast('Локальные данные очищены. Сессия закрыта.');
-            playGlassChime(750, 0.08);
-            renderCabinetView();
         }
 
         /* HELPER FOR ORBIT SWITCHING (ORIGINAL CLEAN IMPLEMENTATION) */
