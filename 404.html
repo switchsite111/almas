@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark min-h-screen">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Страница не найдена | ООО АЛМАС</title>
+    <meta name="description" content="Ошибка 404. Запрашиваемая страница не существует или была перемещена.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" type="image/png" href="images/almas_logo.png">
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=112049036', 'ym');
+
+        ym(112049036, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/112049036" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://mc.yandex.ru">
+    <link rel="dns-prefetch" href="https://mc.yandex.ru">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "#050811",
+                        "surface": "#08101a",
+                        "surface-container": "#111a26",
+                        "primary": "#a7c8ff",
+                        "primary-container": "#3b82f6",
+                        "accent-glow": "#38bdf8"
+                    },
+                    fontFamily: {
+                        sans: ['Sora', 'Inter', 'sans-serif'],
+                        heading: ['Unbounded', 'sans-serif'],
+                        sub: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #050811;
+            color: #dbe3f0;
+            font-family: 'Inter', 'Sora', system-ui, sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .antigravity-dot-grid {
+            position: fixed;
+            inset: -60px;
+            pointer-events: none;
+            z-index: 1;
+            background-image: radial-gradient(rgba(167, 200, 255, 0.10) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.6;
+        }
+
+        .glass-card {
+            background: rgba(13, 22, 37, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(167, 200, 255, 0.12);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+
+        .glow-text {
+            text-shadow: 0 0 35px rgba(56, 189, 248, 0.45);
+        }
+    </style>
+</head>
+
+<body class="relative flex flex-col justify-between min-h-screen">
+    <!-- Animated Dot Grid Background -->
+    <div class="antigravity-dot-grid"></div>
+
+    <!-- Physics Interactive Particle Canvas -->
+    <canvas id="particles-canvas" class="fixed inset-0 pointer-events-none w-full h-full" style="z-index: 2;"></canvas>
+
+    <!-- Background Ambient Glow -->
+    <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-sky-500/10 blur-[130px] pointer-events-none z-0"></div>
+
+    <!-- Header / Logo -->
+    <header class="relative z-10 w-full max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3 group">
+            <img src="images/almas_logo.png" alt="АЛМАС" class="w-10 h-10 object-contain rounded-xl p-1 bg-white/5 border border-white/10 group-hover:border-primary/40 transition-all duration-300">
+            <div class="flex flex-col">
+                <span class="font-heading font-bold text-lg tracking-wider text-white group-hover:text-primary transition-colors">АЛМАС</span>
+                <span class="text-[10px] tracking-widest text-slate-400 uppercase">Системная интеграция</span>
+            </div>
+        </a>
+
+        <a href="index.html" class="inline-flex items-center gap-2 text-xs font-semibold text-slate-300 hover:text-white px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all">
+            <span class="material-symbols-outlined text-base">arrow_back</span>
+            <span>На сайт</span>
+        </a>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-10 flex-1 flex items-center justify-center px-4 py-12">
+        <div class="max-w-xl w-full text-center">
+            <div class="glass-card rounded-3xl p-8 sm:p-12 relative overflow-hidden">
+                <!-- Decorative top gradient line -->
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-[2px] bg-gradient-to-r from-transparent via-sky-400 to-transparent"></div>
+
+                <div class="font-heading font-black text-7xl sm:text-8xl tracking-tight text-white glow-text mb-4">
+                    404
+                </div>
+
+                <h1 class="font-heading text-xl sm:text-2xl font-bold text-slate-100 mb-3">
+                    Страница не найдена
+                </h1>
+
+                <p class="text-sm text-slate-400 leading-relaxed max-w-md mx-auto mb-8">
+                    Возможно, адрес был введен с ошибкой, страница была перемещена или находится на техническом обслуживании.
+                </p>
+
+                <!-- Navigation Action Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <a href="index.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-500 hover:to-sky-400 text-white font-semibold text-sm shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 transition-all duration-300">
+                        <span class="material-symbols-outlined text-base">home</span>
+                        <span>На главную</span>
+                    </a>
+
+                    <a href="index.html#kp" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-sky-400/40 text-slate-200 hover:text-white font-semibold text-sm transition-all duration-300">
+                        <span class="material-symbols-outlined text-base">request_quote</span>
+                        <span>Запросить КП</span>
+                    </a>
+                </div>
+
+                <!-- Quick Services Links -->
+                <div class="mt-10 pt-8 border-t border-white/10">
+                    <div class="text-xs uppercase tracking-widest text-slate-500 mb-4 font-semibold">Популярные разделы</div>
+                    <div class="flex flex-wrap items-center justify-center gap-2 text-xs">
+                        <a href="index.html#hub" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-sky-500/20 hover:text-sky-300 text-slate-400 transition-colors">ЦОД и Серверные</a>
+                        <a href="index.html#hub" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-sky-500/20 hover:text-sky-300 text-slate-400 transition-colors">СКС и ВОЛС</a>
+                        <a href="index.html#hub" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-sky-500/20 hover:text-sky-300 text-slate-400 transition-colors">СКУД и Безопасность</a>
+                        <a href="index.html#vacancies" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-sky-500/20 hover:text-sky-300 text-slate-400 transition-colors">Вакансии</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 w-full max-w-7xl mx-auto px-6 py-6 text-center text-xs text-slate-500">
+        <p>© 2026 ООО «АЛМАС». Системный интегратор IT-инфраструктуры.</p>
+    </footer>
+
+    <!-- Interactive Particle Physics Canvas Script -->
+    <script>
+        (function initParticleCanvas() {
+            const canvas = document.getElementById('particles-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            if (!ctx) return;
+
+            let particles = [];
+            let mouse = { x: null, y: null, radius: 180 };
+
+            window.addEventListener('mousemove', (e) => {
+                mouse.x = e.clientX;
+                mouse.y = e.clientY;
+            });
+
+            window.addEventListener('mouseleave', () => {
+                mouse.x = null;
+                mouse.y = null;
+            });
+
+            function resizeCanvas() {
+                canvas.width = window.innerWidth || document.documentElement.clientWidth || 1920;
+                canvas.height = window.innerHeight || document.documentElement.clientHeight || 1080;
+                initParticles();
+            }
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.vx = (Math.random() - 0.5) * 0.35;
+                    this.vy = (Math.random() - 0.5) * 0.35;
+                    this.radius = Math.random() * 1.3 + 0.6;
+                }
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+
+                    if (this.x < -30) this.x = canvas.width + 30;
+                    else if (this.x > canvas.width + 30) this.x = -30;
+                    if (this.y < -30) this.y = canvas.height + 30;
+                    else if (this.y > canvas.height + 30) this.y = -30;
+
+                    if (mouse.x !== null && mouse.y !== null) {
+                        let dx = mouse.x - this.x;
+                        let dy = mouse.y - this.y;
+                        let distance = Math.sqrt(dx * dx + dy * dy);
+                        if (distance < mouse.radius && distance > 0) {
+                            let force = (mouse.radius - distance) / mouse.radius;
+                            let directionX = dx / distance;
+                            let directionY = dy / distance;
+                            this.x -= directionX * force * 1.8;
+                            this.y -= directionY * force * 1.8;
+                        }
+                    }
+                }
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(167, 200, 255, 0.60)';
+                    ctx.fill();
+                }
+            }
+
+            function initParticles() {
+                particles = [];
+                const isMobile = (window.innerWidth || document.documentElement.clientWidth || 1920) < 768;
+                const count = isMobile ? 85 : 180;
+                for (let i = 0; i < count; i++) {
+                    particles.push(new Particle());
+                }
+            }
+
+            let isPageHidden = false;
+            document.addEventListener('visibilitychange', () => {
+                isPageHidden = document.hidden;
+            });
+
+            function animateParticles() {
+                if (!isPageHidden) {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                    for (let i = 0; i < particles.length; i++) {
+                        particles[i].update();
+                        particles[i].draw();
+                    }
+
+                    const maxDist = 150;
+                    const maxDistSq = maxDist * maxDist;
+                    const buckets = [[], [], [], []];
+
+                    for (let i = 0; i < particles.length; i++) {
+                        const pi = particles[i];
+                        for (let j = i + 1; j < particles.length; j++) {
+                            const pj = particles[j];
+                            const dx = pi.x - pj.x;
+                            const dy = pi.y - pj.y;
+                            const distSq = dx * dx + dy * dy;
+
+                            if (distSq < maxDistSq) {
+                                const dist = Math.sqrt(distSq);
+                                const tier = Math.min(3, Math.floor((dist / maxDist) * 4));
+                                buckets[tier].push(pi.x, pi.y, pj.x, pj.y);
+                            }
+                        }
+                    }
+
+                    const alphas = [0.26, 0.17, 0.09, 0.03];
+                    ctx.lineWidth = 0.6;
+                    for (let b = 0; b < 4; b++) {
+                        const pts = buckets[b];
+                        if (pts.length > 0) {
+                            ctx.beginPath();
+                            ctx.strokeStyle = `rgba(167, 200, 255, ${alphas[b]})`;
+                            for (let k = 0; k < pts.length; k += 4) {
+                                ctx.moveTo(pts[k], pts[k + 1]);
+                                ctx.lineTo(pts[k + 2], pts[k + 3]);
+                            }
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(animateParticles);
+            }
+
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(resizeCanvas, 150);
+            });
+            resizeCanvas();
+            animateParticles();
+        })();
+    </script>
+</body>
+
+</html>

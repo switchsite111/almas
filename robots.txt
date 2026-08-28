@@ -12,5 +12,5 @@ Disallow: /scratch/
 Disallow: /admin/
 Clean-param: utm_source&utm_medium&utm_campaign&gclid&yclid
 
-Host: https://almas-sys.ru
-Sitemap: https://almas-sys.ru/sitemap.xml
+Host: https://almaserv.ru
+Sitemap: https://almaserv.ru/sitemap.xml
